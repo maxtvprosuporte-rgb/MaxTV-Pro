@@ -1,0 +1,1023 @@
+<!-- ================================================== -->
+<!-- INÍCIO DO DOCUMENTO HTML                           -->
+<!-- PROJETO: SITE MAXTV PRO                             -->
+<!-- ================================================== -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MaxTV Pro | IPTV Premium</title>
+    
+<style>
+/* ================================================== */
+/* VARIÁVEIS                                         */
+/* ================================================== */
+    
+:root{
+    --preto:#000000;
+    --preto-sec:#0b0b0b;
+    --vermelho:#b30000;
+    --dourado:#d4af37;
+    --texto:#ffffff;
+    --texto-sec:#cccccc;
+}
+
+/* ================================================== */
+/* RESET                                             */
+/* ================================================== */
+    
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* ================================================== */
+/* BODY                                              */
+/* ================================================== */
+    
+body{
+    background:var(--preto);
+    color:var(--texto);
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+/* ================================================== */
+/* ESTRUTURA                                         */
+/* ================================================== */
+    
+section{
+    width:100%;
+    padding:60px 16px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    text-align:center;
+}
+
+/* ================================================== */
+/* TEXTOS                                            */
+/* ================================================== */
+    
+.titulo{
+    font-size:clamp(1.8rem,4vw,2.6rem);
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.titulo span{
+    color:var(--dourado);
+}
+
+.subtexto{
+    max-width:900px;
+    margin:0 auto;
+    font-size:clamp(1rem,2.5vw,1.1rem);
+    color:var(--texto-sec);
+    text-align:center;
+}
+
+/* 🔥 CORREÇÃO DO PROBLEMA */
+.titulo-secao{
+    font-size:clamp(1.8rem,4vw,2.4rem);
+    margin-bottom:14px;
+    text-align:center;
+}
+
+.subtitulo-secao{
+    max-width:900px;
+    margin:0 auto;
+    font-size:1.05rem;
+    color:var(--texto-sec);
+    text-align:center;
+}
+
+/* ================================================== */
+/* LOGO                                              */
+/* ================================================== */
+    
+.logo img{
+    width:190px;
+    max-width:90%;
+}
+
+/* ================================================== */
+/* PARTE 3 - INFORMAÇÕES                              */
+/* ================================================== */
+    
+.card-info{
+    margin:40px auto 0;
+    max-width:900px;
+    background:var(--preto-sec);
+    border:2px solid var(--vermelho);
+    border-radius:18px;
+    padding:30px 22px;
+    text-align:left;
+}
+
+.card-info h3{
+    color:var(--dourado);
+    margin:22px 0 10px;
+}
+
+.card-info ul{
+    list-style:none;
+}
+
+.card-info li{
+    margin-bottom:6px;
+    font-size:0.95rem;
+    color:var(--texto-sec);
+}
+
+/* ================================================== */
+/* PARTE 4 - CARROSSEL                               */
+/* ================================================== */
+    
+.carousel-wrapper{
+    overflow:hidden;
+    width:100%;
+    margin-top:30px;
+    cursor:grab;
+}
+
+.carousel-track{
+    display:flex;
+    width:max-content;
+    animation:scrollLoop 35s linear infinite;
+}
+
+.carousel-wrapper:hover .carousel-track{
+    animation-play-state:paused;
+}
+
+.carousel-track img{
+    width:140px;
+    margin-right:16px;
+    border-radius:14px;
+    border:2px solid var(--vermelho);
+    flex-shrink:0;
+}
+
+@media (min-width:768px){
+    .carousel-track img{
+        width:200px;
+    }
+}
+
+@keyframes scrollLoop{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+}
+
+/* ===================== */
+/* PARTE 5 | PLANOS     */
+/* ===================== */
+
+#planos {
+    background: #000;
+}
+
+.planos-container{
+    max-width:900px;
+    margin:40px auto 0;
+    display:flex;
+    gap:30px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.plano-card{
+    background:var(--preto-sec);
+    border:2px solid var(--vermelho);
+    border-radius:20px;
+    padding:35px 25px;
+    max-width:360px;
+    width:100%;
+    text-align:center;
+}
+
+.plano-card h3 {
+    color: var(--dourado);
+    font-size: 1.5rem;
+    margin-bottom: 14px;
+    text-align: center;
+}
+
+.preco {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.preco .valor {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--texto);
+}
+
+.preco .periodo {
+    color: #aaa;
+    font-size: 0.95rem;
+}
+
+.lista-planos {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.lista-planos li {
+    margin-bottom: 8px;
+    color: var(--texto-sec);
+    font-size: 0.95rem;
+}
+
+.lista-planos strong {
+    color: var(--dourado);
+}
+
+/* ================================================== */
+/* PARTE 6 - PLATAFORMAS (LISTA)                      */
+/* ================================================== */
+    
+.plataformas{
+    max-width:900px;
+    margin:40px auto 0;
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+    text-align:left;
+}
+
+.plataformas h3{
+    color:var(--dourado);
+    margin-bottom:6px;
+}
+
+.plataformas ul{
+    list-style:none;
+}
+
+.plataformas li{
+    margin-bottom:6px;
+    font-size:0.95rem;
+    color:var(--texto-sec);
+}
+
+/* ===================== */
+/* PLATAFORMAS - TEXTO CENTRALIZADO */
+/* ===================== */
+
+#plataformas h3,
+#plataformas p,
+#plataformas ul,
+#plataformas li{
+    text-align: center;
+}
+
+#plataformas ul{
+    padding: 0;
+}
+
+#plataformas li{
+    list-style: none;
+    margin-bottom: 6px;
+    color: var(--texto-sec);
+    font-size: 0.95rem;
+}
+    
+/* ================================================== */
+/* PARTE 7 - AVALIAÇÕES (LISTA)                       */
+/* ================================================== */
+    
+.avaliacoes{
+    max-width:900px;
+    margin:40px auto 0;
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.avaliacao{
+    background:var(--preto-sec);
+    border:2px solid var(--vermelho);
+    border-radius:18px;
+    padding:26px 22px;
+}
+
+.avaliacao strong{
+    color:var(--dourado);
+}
+
+.avaliacao p{
+    margin-top:10px;
+    color:var(--texto-sec);
+    font-size:0.95rem;
+    line-height:1.6;
+}
+
+/* ================================================== */
+/* FOOTER                                            */
+/* ================================================== */
+    
+footer{
+    background:#000;
+    padding:22px 10px;
+    text-align:center;
+    color:#888;
+    font-size:0.9rem;
+}
+
+/* ================================================== */
+/* MOBILE                                            */
+/* ================================================== */
+    
+@media (max-width:480px){
+    section{ padding:45px 14px; }
+    .card-info{ padding:24px 18px; }
+}
+
+/* ========================= */
+/* BOTÃO WHATSAPP – TESTE GRÁTIS */
+/* ========================= */
+
+.btn-whatsapp{
+    margin-top:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+
+    background:linear-gradient(135deg,#25d366,#1ebe5d);
+    color:#fff !important;
+
+    padding:14px 20px;
+    border-radius:14px;
+
+    font-weight:700;
+    text-decoration:none !important;
+
+    box-shadow:
+        0 0 12px rgba(37,211,102,.6),
+        0 0 25px rgba(37,211,102,.4);
+
+    transition:.3s ease;
+}
+
+.btn-whatsapp:hover{
+    transform:scale(1.04);
+    box-shadow:
+        0 0 18px rgba(37,211,102,.9),
+        0 0 35px rgba(37,211,102,.7);
+}
+
+/* ÍCONE DO WHATSAPP */
+.icon-whatsapp{
+    width:28px;
+    height:28px;
+    background:url("https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg")
+    no-repeat center;
+    background-size:contain;
+}
+
+/* TEXTO */
+.btn-whatsapp .texto{
+    display:flex;
+    flex-direction:column;
+    line-height:1.1;
+}
+
+.btn-whatsapp small{
+    font-size:12px;
+    font-weight:400;
+    opacity:.85;
+}
+</style>
+</head>
+<body>
+    
+<!-- ================================================== -->
+<!-- PARTE 1 - LOGOTIPO                                 -->
+<!-- ================================================== -->
+    
+<section id="topo" class="logo">
+<div class="container">
+    <img src="icon/logo.png" alt="MaxTV Pro">
+</div>
+</section>
+
+<!-- ================================================== -->
+<!-- PARTE 2 - TEXTO PRINCIPAL (SEM BOTÕES)             -->
+<!-- ================================================== -->
+
+<section id="inicio">
+<div class="container">
+
+    <h1 class="titulo">
+        O <span>Melhor Streaming IPTV</span> do Brasil
+    </h1>
+
+    <p class="subtexto">
+        Mais de
+        <strong style="color:var(--dourado); font-size:1.15rem;">
+            10.000 clientes ativos
+        </strong>
+        já confiam na MaxTV Pro para assistir seus conteúdos favoritos
+        com <strong>qualidade máxima</strong>, <strong>estabilidade total</strong>
+        e um dos <strong>maiores catálogos do Brasil</strong>, tudo em um único aplicativo.
+    </p>
+
+    <p class="subtexto" style="margin-top:18px;">
+        Uma plataforma completa para quem busca
+        <span style="color:var(--dourado); font-weight:bold;">
+            performance, variedade e confiabilidade
+        </span>
+        em IPTV premium.
+    </p>
+
+</div>
+</section>
+    
+<!-- ================================================== -->
+<!-- PARTE 3 - DESCRIÇÃO PROMOCIONAL (ATUALIZADA)       -->
+<!-- ================================================== -->
+
+<section id="descricao">
+<div class="container">
+
+    <p class="subtexto">
+        Uma experiência IPTV completa, pensada para quem exige
+        <span style="color:var(--dourado);font-weight:bold;">
+        qualidade, variedade e estabilidade
+        </span>
+        em um único aplicativo.
+    </p>
+
+    <div style="
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+        gap:20px;
+        max-width:1000px;
+        margin:40px auto 0;
+    ">
+
+        <!-- CARD 1 -->
+        <div style="
+            background:var(--preto-sec);
+            border:2px solid var(--vermelho);
+            border-radius:18px;
+            padding:28px 20px;
+            text-align:center;
+        ">
+            <h3 style="color:var(--dourado);margin-bottom:10px;">
+                +2.384 Canais ao Vivo
+            </h3>
+            <p>
+                Canais abertos e fechados organizados em
+                <strong style="color:var(--dourado);">66 categorias</strong>,
+                incluindo esportes, filmes, séries, infantil e muito mais.
+            </p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div style="
+            background:var(--preto-sec);
+            border:2px solid var(--vermelho);
+            border-radius:18px;
+            padding:28px 20px;
+            text-align:center;
+        ">
+            <h3 style="color:var(--dourado);margin-bottom:10px;">
+                +5.431 Séries Completas
+            </h3>
+            <p>
+                Séries organizadas em
+                <strong style="color:var(--dourado);">21 categorias</strong>,
+                incluindo as principais plataformas do mercado.
+            </p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div style="
+            background:var(--preto-sec);
+            border:2px solid var(--vermelho);
+            border-radius:18px;
+            padding:28px 20px;
+            text-align:center;
+        ">
+            <h3 style="color:var(--dourado);margin-bottom:10px;">
+                +27.703 Filmes
+            </h3>
+            <p>
+                Um catálogo gigantesco com
+                <strong style="color:var(--dourado);">47 categorias</strong>,
+                sempre atualizado com lançamentos e clássicos.
+            </p>
+        </div>
+
+        <!-- CARD 4 -->
+        <div style="
+            background:var(--preto-sec);
+            border:2px solid var(--vermelho);
+            border-radius:18px;
+            padding:28px 20px;
+            text-align:center;
+        ">
+            <h3 style="color:var(--dourado);margin-bottom:10px;">
+                Conteúdo Premium Exclusivo
+            </h3>
+            <p>
+                Conteúdo adulto, conteúdo premium OnlyFans
+                e canais funcionando
+                <strong style="color:var(--dourado);">24 horas por dia</strong>.
+            </p>
+        </div>
+
+        <!-- CARD 5 -->
+        <div style="
+            background:var(--preto-sec);
+            border:2px solid var(--vermelho);
+            border-radius:18px;
+            padding:28px 20px;
+            text-align:center;
+        ">
+            <h3 style="color:var(--dourado);margin-bottom:10px;">
+                Esportes Sempre Atualizados
+            </h3>
+            <p>
+                Atualizações semanais com jogos de
+                <strong style="color:var(--dourado);">
+                futebol, basquete e outros esportes
+                </strong>.
+            </p>
+        </div>
+
+        <!-- CARD 6 -->
+        <div style="
+            background:var(--preto-sec);
+            border:2px solid var(--vermelho);
+            border-radius:18px;
+            padding:28px 20px;
+            text-align:center;
+        ">
+            <h3 style="color:var(--dourado);margin-bottom:10px;">
+                Qualidade Máxima de Imagem
+            </h3>
+            <p>
+                Conteúdo disponível em
+                <strong style="color:var(--dourado);">
+                SD, HD, Full HD e 4K
+                </strong>,
+                com estabilidade total e sem travamentos.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- ================================================== -->
+<!-- PARTE 4 - DESTAQUE DOS FILMES (CARROSSEL INFINITO) -->
+<!-- ================================================== -->
+
+<section id="filmes">
+<div class="container">
+
+    <h2 class="titulo">
+        Destaques em <span>Filmes</span>
+    </h2>
+
+    <p class="subtexto">
+        Lançamentos, sucessos de bilheteria e conteúdos premium
+        disponíveis com qualidade máxima.
+    </p>
+
+    <!-- CARROSSEL -->
+<div class="carousel-wrapper">
+    <div class="carousel-track" id="carousel-track">
+        <div class="carousel-set">
+            <img src="banners_filmes/img_01.jpeg">
+            <img src="banners_filmes/img_02.jpeg">
+            <img src="banners_filmes/img_03.jpeg">
+            <img src="banners_filmes/img_04.jpeg">
+            <img src="banners_filmes/img_05.jpeg">
+            <img src="banners_filmes/img_06.jpeg">
+            <img src="banners_filmes/img_07.jpeg">
+            <img src="banners_filmes/img_08.jpeg">
+            <img src="banners_filmes/img_09.jpeg">
+            <img src="banners_filmes/img_10.jpeg">
+        </div>
+
+        <!-- DUPLICAÇÃO AUTOMÁTICA -->
+        <div class="carousel-set">
+            <img src="banners_filmes/img_01.jpeg">
+            <img src="banners_filmes/img_02.jpeg">
+            <img src="banners_filmes/img_03.jpeg">
+            <img src="banners_filmes/img_04.jpeg">
+            <img src="banners_filmes/img_05.jpeg">
+            <img src="banners_filmes/img_06.jpeg">
+            <img src="banners_filmes/img_07.jpeg">
+            <img src="banners_filmes/img_08.jpeg">
+            <img src="banners_filmes/img_09.jpeg">
+            <img src="banners_filmes/img_10.jpeg">
+        </div>
+    </div>
+</div>
+</section>
+    
+<!-- ===================== -->
+<!-- PARTE 5 | PLANOS E VALORES -->
+<!-- ===================== -->
+
+<section id="planos" class="planos-section">
+
+    <h2 class="titulo-secao">Planos e Valores</h2>
+
+    <p class="subtitulo-secao">
+        Escolha o plano ideal para você e tenha acesso completo ao melhor IPTV do Brasil,
+        com qualidade máxima, estabilidade total e suporte dedicado.
+    </p>
+
+    <div class="planos-container">
+
+        <!-- PLANO 1 DISPOSITIVO -->
+        <div class="plano-card">
+
+            <h3>1 Dispositivo</h3>
+
+            <div class="preco">
+                <span class="valor">R$ 30,00</span>
+                <span class="periodo">/ mês</span>
+            </div>
+
+            <ul class="lista-planos">
+                <li>3 meses — R$ 90,00</li>
+                <li>6 meses — R$ 162,00 <strong>(10% OFF)</strong></li>
+                <li>9 meses — R$ 234,00 <strong>(13% OFF)</strong></li>
+                <li>12 meses — R$ 288,00 <strong>(20% OFF)</strong></li>
+            </ul>
+
+            <!-- BOTÃO TESTE GRÁTIS -->
+            <a href="https://wa.me/5541997043607"
+               target="_blank"
+               class="btn-whatsapp">
+
+                <span class="icon-whatsapp"></span>
+
+                <span class="texto">
+                    TESTE GRÁTIS
+                    <small>6 horas sem compromisso</small>
+                </span>
+            </a>
+
+        </div>
+
+        <!-- PLANO 2 DISPOSITIVOS -->
+        <div class="plano-card">
+
+            <h3>2 Dispositivos</h3>
+
+            <div class="preco">
+                <span class="valor">R$ 48,00</span>
+                <span class="periodo">/ mês</span>
+            </div>
+
+            <ul class="lista-planos">
+                <li>3 meses — R$ 144,00</li>
+                <li>6 meses — R$ 270,00 <strong>(6% OFF)</strong></li>
+                <li>9 meses — R$ 378,00 <strong>(12% OFF)</strong></li>
+                <li>12 meses — R$ 460,80 <strong>(20% OFF)</strong></li>
+            </ul>
+
+            <!-- BOTÃO TESTE GRÁTIS -->
+            <a href="https://wa.me/5541997043607"
+               target="_blank"
+               class="btn-whatsapp">
+
+                <span class="icon-whatsapp"></span>
+
+                <span class="texto">
+                    TESTE GRÁTIS
+                    <small>6 horas sem compromisso</small>
+                </span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+    
+<!-- ================================================== -->
+<!-- PARTE 6 - PLATAFORMAS E APLICATIVOS                 -->
+<!-- ================================================== -->
+
+<section id="plataformas">
+<div class="container">
+
+    <h2 class="titulo">
+        Plataformas e <span>Aplicativos Compatíveis</span>
+    </h2>
+
+    <p class="subtexto">
+        Utilize a MaxTV Pro nos principais dispositivos do mercado,
+        com aplicativos estáveis e compatíveis para cada plataforma.
+    </p>
+
+     <div style="
+         display:flex;
+         flex-direction:column;
+         gap:24px;
+         max-width:900px;
+         margin:40px auto 0;
+         text-align:left;
+     ">
+
+        <!-- ANDROID -->
+        <div style="
+            background:var(--preto-sec);
+            border:2px solid var(--vermelho);
+            border-radius:18px;
+            padding:26px 22px;
+        ">
+            <h3 style="color:var(--dourado);margin-bottom:6px;">
+                Android
+            </h3>
+            <p style="font-size:0.9rem;color:var(--texto-sec);margin-bottom:12px;">
+                Celular, Tablet e TV Android
+            </p>
+            <ul style="list-style:none;">
+                <li>Atmos IBO</li>
+                <li>Downloader by AFTVnews</li>
+                <li>ntDown</li>
+            </ul>
+        </div>
+
+        <!-- IOS -->
+        <div style="
+            background:var(--preto-sec);
+            border:2px solid var(--vermelho);
+            border-radius:18px;
+            padding:26px 22px;
+        ">
+            <h3 style="color:var(--dourado);margin-bottom:6px;">
+                iOS
+            </h3>
+            <p style="font-size:0.9rem;color:var(--texto-sec);margin-bottom:12px;">
+                iPhone e iPad
+            </p>
+            <ul style="list-style:none;">
+                <li>IPTVX</li>
+            </ul>
+        </div>
+
+        <!-- COMPUTADOR -->
+        <div style="
+            background:var(--preto-sec);
+            border:2px solid var(--vermelho);
+            border-radius:18px;
+            padding:26px 22px;
+        ">
+            <h3 style="color:var(--dourado);margin-bottom:6px;">
+                Computador
+            </h3>
+            <p style="font-size:0.9rem;color:var(--texto-sec);margin-bottom:12px;">
+                Windows, Mac e Linux
+            </p>
+            <ul style="list-style:none;">
+                <li>Web Player Oficial</li>
+            </ul>
+        </div>
+
+        <!-- SMART TV -->
+        <div style="
+            background:var(--preto-sec);
+            border:2px solid var(--vermelho);
+            border-radius:18px;
+            padding:26px 22px;
+        ">
+            <h3 style="color:var(--dourado);margin-bottom:6px;">
+                Smart TV
+            </h3>
+            <p style="font-size:0.9rem;color:var(--texto-sec);margin-bottom:12px;">
+                LG, Samsung 4K e Roku TV
+            </p>
+            <ul style="list-style:none;">
+                <li>Play Sim</li>
+                <li>Assist Plus</li>
+                <li>Fun Play</li>
+            </ul>
+        </div>
+
+        <!-- DISPOSITIVOS PARA TV -->
+        <div style="
+            background:var(--preto-sec);
+            border:2px solid var(--vermelho);
+            border-radius:18px;
+            padding:26px 22px;
+        ">
+            <h3 style="color:var(--dourado);margin-bottom:6px;">
+                Dispositivos para TV
+            </h3>
+            <p style="font-size:0.9rem;color:var(--texto-sec);margin-bottom:12px;">
+                Mi Stick, Fire Stick, Chromecast e TV Box
+            </p>
+            <ul style="list-style:none;">
+                <li>Atmos IBO</li>
+                <li>Play Sim</li>
+                <li>Assist Plus</li>
+                <li>Fun Play</li>
+                <li>Downloader by AFTVnews</li>
+                <li>Web Video Cast</li>
+            </ul>
+        </div>
+
+        <!-- PREMIUM -->
+        <div style="
+            background:var(--preto-sec);
+            border:2px solid var(--vermelho);
+            border-radius:18px;
+            padding:26px 22px;
+        ">
+            <h3 style="color:var(--dourado);margin-bottom:6px;">
+                Aplicativos Premium
+            </h3>
+            <p style="font-size:0.9rem;color:var(--texto-sec);margin-bottom:12px;">
+                Exclusivos para assinantes
+            </p>
+            <ul style="list-style:none;">
+                <li>Max Player</li>
+                <li>XCloud</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- ================================================== -->
+<!-- PARTE 7 - AVALIAÇÕES DOS CLIENTES                  -->
+<!-- ================================================== -->
+
+<section id="avaliacoes">
+<div class="container">
+
+    <h2 class="titulo">
+        Avaliações de <span>Clientes Reais</span>
+    </h2>
+
+    <p class="subtexto">
+        Veja a opinião de quem já utiliza a MaxTV Pro e
+        comprova na prática a qualidade do nosso serviço.
+    </p>
+
+    <div style="
+        display:flex;
+        flex-direction:column;
+        gap:24px;
+        max-width:900px;
+        margin:40px auto 0;
+     ">
+
+        <div class="avaliacao">
+            <strong style="color:var(--dourado);">Carlos M.</strong><br>
+            ⭐⭐⭐⭐⭐
+            <p>
+                Qualidade excelente nos canais e nos filmes.
+                Uso diariamente e nunca tive problemas com travamentos.
+                Serviço muito acima da média.
+            </p>
+        </div>
+
+        <div class="avaliacao">
+            <strong style="color:var(--dourado);">Fernanda R.</strong><br>
+            ⭐⭐⭐⭐⭐
+            <p>
+                Testei outros IPTV antes, mas esse foi o único realmente estável.
+                Funciona perfeitamente na Smart TV e no celular.
+            </p>
+        </div>
+
+        <div class="avaliacao">
+            <strong style="color:var(--dourado);">Lucas A.</strong><br>
+            ⭐⭐⭐⭐⭐
+            <p>
+                Catálogo enorme de filmes e séries.
+                Sempre tem conteúdo novo e atualizado.
+                Vale muito a pena.
+            </p>
+        </div>
+
+        <div class="avaliacao">
+            <strong style="color:var(--dourado);">Patrícia S.</strong><br>
+            ⭐⭐⭐⭐⭐
+            <p>
+                Uso em dois dispositivos ao mesmo tempo e a qualidade continua perfeita.
+                Preço justo pelo que entrega.
+            </p>
+        </div>
+
+        <div class="avaliacao">
+            <strong style="color:var(--dourado);">Ricardo L.</strong><br>
+            ⭐⭐⭐⭐⭐
+            <p>
+                Organização dos canais é excelente.
+                Fácil de usar, rápido e muito estável.
+                Recomendo sem medo.
+            </p>
+        </div>
+
+        <div class="avaliacao">
+            <strong style="color:var(--dourado);">Juliana P.</strong><br>
+            ⭐⭐⭐⭐⭐
+            <p>
+                A imagem em HD e 4K é impressionante.
+                Atendimento rápido e teste grátis ajudou muito na decisão.
+            </p>
+        </div>
+
+        <div class="avaliacao">
+            <strong style="color:var(--dourado);">Eduardo F.</strong><br>
+            ⭐⭐⭐⭐⭐
+            <p>
+                Funciona muito bem em todos os aplicativos que testei.
+                Conteúdo completo e sem quedas.
+            </p>
+        </div>
+
+        <div class="avaliacao">
+            <strong style="color:var(--dourado);">Mariana C.</strong><br>
+            ⭐⭐⭐⭐⭐
+            <p>
+                Serviço confiável e sempre atualizado.
+                Depois que comecei a usar, não troco mais.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- ================================================== -->
+<!-- FOOTER                                            -->
+<!-- ================================================== -->
+<footer>
+© 2025 • MaxTV Pro • Todos os direitos reservados
+</footer>
+
+<!-- SCRIPT DO CARROSSEL -->
+<script>
+const carousel = document.querySelector('.carousel-wrapper');
+
+if (carousel) {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    carousel.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
+
+    carousel.addEventListener('mouseup', () => {
+        isDown = false;
+    });
+
+    carousel.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        carousel.scrollLeft = scrollLeft - walk;
+    });
+
+    carousel.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].pageX;
+        scrollLeft = carousel.scrollLeft;
+    });
+
+    carousel.addEventListener('touchmove', (e) => {
+        const x = e.touches[0].pageX;
+        const walk = (x - startX) * 1.5;
+        carousel.scrollLeft = scrollLeft - walk;
+    });
+}
+</script>
+</body>
+</html>
+
+
