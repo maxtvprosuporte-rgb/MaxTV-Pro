@@ -400,67 +400,53 @@ footer{
 }
 
 /* ==================================================
-   AJUSTE VISUAL - CATEGORIAS (DESKTOP)
+   CORREÇÃO REAL – CATEGORIAS (DESKTOP)
    ================================================== */
 
 @media (min-width: 1024px) {
 
-  #categorias .container {
-    max-width: 1200px;
+  /* Card */
+  #categorias .card {
+    padding: 32px 30px;
   }
 
-  #categorias h2 {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
-  #categorias .subtexto {
-    text-align: center;
-    max-width: 720px;
-    margin: 0 auto 50px;
-    line-height: 1.6;
-  }
-
-  /* GRID MAIS RESPIRÁVEL */
-  #categorias > div > div {
-    gap: 32px !important;
-  }
-
-  /* CARDS */
-  #categorias .container > div > div > div {
-    padding: 28px 26px;
-  }
-
-  /* TÍTULOS DOS CARDS */
-  #categorias h3 {
-    font-size: 1.35rem;
-    margin-bottom: 8px;
-  }
-
-  /* TEXTO DE TOTAL */
-  #categorias p {
-    margin-bottom: 18px;
-    font-size: 0.95rem;
-  }
-
-  /* LISTAS */
+  /* Lista vira grid em 2 colunas */
   #categorias ul {
-    max-width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    row-gap: 6px;
+    max-width: 100%;
     margin: 0 auto;
   }
 
+  /* Itens */
   #categorias li {
-    line-height: 1.7;
-    font-size: 0.9rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
   }
 
-  /* SUBSEÇÕES (Ex: Esportes, Gêneros, Plataformas) */
+  /* Subtítulos dentro da lista */
   #categorias li strong {
-    display: block;
-    margin-top: 14px;
-    margin-bottom: 4px;
+    grid-column: span 2;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
     color: var(--dourado);
-    font-weight: 600;
+  }
+
+  /* Título do card */
+  #categorias h3 {
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  /* Texto de total */
+  #categorias p {
+    text-align: center;
+    margin-bottom: 22px;
+    font-size: 0.95rem;
+    color: var(--texto-sec);
   }
 }
 
