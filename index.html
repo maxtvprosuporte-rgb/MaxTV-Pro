@@ -1,4 +1,4 @@
-<!-- ================================================== -->
+!-- ================================================== -->
 <!-- INÍCIO DO DOCUMENTO HTML                           -->
 <!-- PROJETO: SITE MAXTV PRO                             -->
 <!-- ================================================== -->
@@ -399,48 +399,138 @@ footer{
     opacity:.85;
 }
 
-/* ===== CATEGORIAS – DESKTOP ===== */
-@media (min-width: 1024px) {
+/* ===============================
+   SEÇÃO CATEGORIAS DE CONTEÚDO
+================================ */
 
-  #categorias {
+.categorias-conteudo {
+    padding: 80px 20px;
+    background: radial-gradient(circle at top, #141414, #000);
+    text-align: center;
+}
+
+/* Título principal */
+.categorias-conteudo h2 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.categorias-conteudo h2 span {
+    color: #d4af37;
+}
+
+/* Subtítulo */
+.categorias-conteudo p {
+    max-width: 720px;
+    margin: 0 auto 60px;
+    font-size: 16px;
+    color: #bfbfbf;
+    line-height: 1.6;
+}
+
+/* ===============================
+   GRID DOS CARDS (PC)
+================================ */
+
+.cards-categorias {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
     align-items: stretch;
-  }
+}
 
-  #categorias .card {
+/* ===============================
+   CARD INDIVIDUAL
+================================ */
+
+.card-categoria {
+    background: linear-gradient(180deg, #0f0f0f, #070707);
+    border: 2px solid #b22222;
+    border-radius: 22px;
+    padding: 34px 28px;
+    min-height: 440px;
+
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: flex-start;
-    padding: 28px 26px;
-    height: 100%;
-  }
 
-  #categorias h3,
-  #categorias p {
-    text-align: center;
-  }
+    transition: all 0.3s ease;
+}
 
-  #categorias ul {
-    margin-top: 18px;
-    padding: 0;
+.card-categoria:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(178, 34, 34, 0.35);
+}
+
+/* ===============================
+   TÍTULO DO CARD
+================================ */
+
+.card-categoria h3 {
+    font-size: 24px;
+    color: #d4af37;
+    margin-bottom: 12px;
+}
+
+/* Quantidade */
+.card-categoria .quantidade {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 24px;
+}
+
+/* ===============================
+   LISTA DE CATEGORIAS
+================================ */
+
+.card-categoria ul {
     list-style: none;
-  }
+    padding: 0;
+    margin: 0;
 
-  #categorias li {
-    font-size: 0.95rem;
-    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    font-size: 15px;
+    color: #cfcfcf;
     text-align: center;
-  }
+}
 
-  #categorias li strong {
-    display: block;
-    margin-top: 16px;
-    margin-bottom: 6px;
-    color: var(--dourado);
-    font-size: 0.95rem;
-  }
+/* Cadeado */
+.card-categoria ul li.lock {
+    color: #ff5a5a;
+    font-weight: 600;
+}
+
+/* ===============================
+   RESPONSIVO – MOBILE
+================================ */
+
+@media (max-width: 900px) {
+    .cards-categorias {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+    }
+
+    .card-categoria {
+        min-height: auto;
+        padding: 30px 24px;
+    }
+
+    .categorias-conteudo h2 {
+        font-size: 30px;
+    }
+
+    .card-categoria h3 {
+        font-size: 22px;
+    }
 }
 
 </style>
@@ -682,111 +772,71 @@ footer{
 <!-- CANAIS | SÉRIES | FILMES                           -->
 <!-- ================================================== -->
 
-<section id="categorias">
-<div class="container">
+<section class="categorias-conteudo" id="categorias">
 
-    <h2 class="titulo">
-        Categorias de <span>Conteúdo</span>
-    </h2>
-
-    <p class="subtexto">
-        Um dos maiores catálogos do Brasil, organizado para facilitar
-        sua navegação e oferecer sempre o melhor conteúdo.
+    <h2>Categorias de <span>Conteúdo</span></h2>
+    <p>
+        Um dos maiores catálogos do Brasil, organizado para facilitar sua navegação
+        e oferecer sempre o melhor conteúdo.
     </p>
 
-    <!-- GRID DOS 3 CARDS -->
-    <div style="
-        display:grid;
-        grid-template-columns:repeat(3, 1fr);
-        gap:24px;
-        max-width:1200px;
-        margin:40px auto 0;
-    ">
+    <div class="cards-categorias">
 
-        <!-- ================= CARD CANAIS ================= -->
-        <div style="
-            background:var(--preto-sec);
-            border:2px solid var(--vermelho);
-            border-radius:18px;
-            padding:26px 22px;
-            text-align:center;
-        ">
-            <h3 style="color:var(--dourado);margin-bottom:8px;">
-                Canais
-            </h3>
+        <!-- =======================
+             CARD: CANAIS
+        ======================== -->
+        <div class="card-categoria" id="card-canais">
+            <h3>Canais</h3>
+            <div class="quantidade">2.384 canais ao vivo</div>
 
-            <p style="color:var(--texto-sec);margin-bottom:14px;">
-                <strong style="color:var(--dourado);">2.384 canais</strong> ao vivo
-            </p>
-
-            <ul style="list-style:none; font-size:0.95rem;">
-                <li>Canais Abertos e Regionais</li>
+            <ul>
+                <li>Abertos e Regionais</li>
                 <li>Canais Internacionais</li>
                 <li>Esportes e PPV</li>
                 <li>Filmes e Séries</li>
-                <li>Infantil e Desenhos</li>
-                <li>Canais 24h</li>
-                <li>Conteúdo Adulto 🔒</li>
+                <li>Infantil e Documentários</li>
+                <li>24h (Desenhos, Séries e Premium)</li>
+                <li class="lock">Conteúdo Adulto 🔒</li>
             </ul>
         </div>
 
-        <!-- ================= CARD SÉRIES ================= -->
-        <div style="
-            background:var(--preto-sec);
-            border:2px solid var(--vermelho);
-            border-radius:18px;
-            padding:26px 22px;
-            text-align:center;
-        ">
-            <h3 style="color:var(--dourado);margin-bottom:8px;">
-                Séries
-            </h3>
+        <!-- =======================
+             CARD: SÉRIES
+        ======================== -->
+        <div class="card-categoria" id="card-series">
+            <h3>Séries</h3>
+            <div class="quantidade">5.431 séries completas</div>
 
-            <p style="color:var(--texto-sec);margin-bottom:14px;">
-                <strong style="color:var(--dourado);">5.431 séries</strong> completas
-            </p>
-
-            <ul style="list-style:none; font-size:0.95rem;">
+            <ul>
                 <li>Séries Nacionais e Internacionais</li>
-                <li>Novelas e Doramas</li>
-                <li>Animes Dublado e Legendado</li>
-                <li>Animações Clássicas</li>
-                <li>Principais Plataformas</li>
-                <li>Conteúdo Exclusivo</li>
-                <li>OnlyFans 🔒</li>
+                <li>Novelas, Doramas e Turcas</li>
+                <li>Animes (Dublado e Legendado)</li>
+                <li>Animações e Clássicos</li>
+                <li>Plataformas Premium</li>
+                <li>Netflix, Prime, HBO, Disney+</li>
+                <li class="lock">Conteúdo Restrito 🔒</li>
             </ul>
         </div>
 
-        <!-- ================= CARD FILMES ================= -->
-        <div style="
-            background:var(--preto-sec);
-            border:2px solid var(--vermelho);
-            border-radius:18px;
-            padding:26px 22px;
-            text-align:center;
-        ">
-            <h3 style="color:var(--dourado);margin-bottom:8px;">
-                Filmes
-            </h3>
+        <!-- =======================
+             CARD: FILMES
+        ======================== -->
+        <div class="card-categoria" id="card-filmes">
+            <h3>Filmes</h3>
+            <div class="quantidade">27.703 filmes disponíveis</div>
 
-            <p style="color:var(--texto-sec);margin-bottom:14px;">
-                <strong style="color:var(--dourado);">27.703 filmes</strong> disponíveis
-            </p>
-
-            <ul style="list-style:none; font-size:0.95rem;">
+            <ul>
                 <li>Lançamentos Atualizados</li>
                 <li>Ação, Comédia e Drama</li>
                 <li>Terror, Suspense e Romance</li>
-                <li>Marvel e DC</li>
-                <li>Filmes Nacionais</li>
-                <li>Filmes em 4K</li>
-                <li>Conteúdo Adulto 🔒</li>
+                <li>Clássicos e Filmes 4K</li>
+                <li>Infantil e Para Família</li>
+                <li>Marvel, DC e Universos</li>
+                <li class="lock">Conteúdo Adulto 🔒</li>
             </ul>
         </div>
 
     </div>
-
-</div>
 </section>
 
 <!-- ===================== -->
