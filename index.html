@@ -338,50 +338,73 @@ section{
 /* PARTE 6 - PLATAFORMAS (LISTA)                      */
 /* ================================================== */
     
-.plataformas{
-    max-width:900px;
-    margin:40px auto 0;
-    display:flex;
-    flex-direction:column;
-    gap:24px;
-    text-align:left;
-}
-
-.plataformas h3{
-    color:var(--dourado);
-    margin-bottom:6px;
-}
-
-.plataformas ul{
-    list-style:none;
-}
-
-.plataformas li{
-    margin-bottom:6px;
-    font-size:0.95rem;
-    color:var(--texto-sec);
-}
-
-/* ===================== */
-/* PLATAFORMAS - TEXTO CENTRALIZADO */
-/* ===================== */
-
-#plataformas h3,
-#plataformas p,
-#plataformas ul,
-#plataformas li{
+.apps-plataformas {
+    background: #000;
+    padding: 80px 20px;
     text-align: center;
 }
 
-#plataformas ul{
-    padding: 0;
+.section-title {
+    color: #d4af37;
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
-#plataformas li{
-    list-style: none;
-    margin-bottom: 6px;
-    color: var(--texto-sec);
-    font-size: 0.95rem;
+.section-subtitle {
+    color: #ccc;
+    font-size: 16px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto 40px auto;
+}
+
+.card {
+    background: #0b0b0b;
+    border: 2px solid #b10000;
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 25px rgba(177, 0, 0, 0.6);
+}
+
+.icon-box {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+    background: #fff;
+    border-radius: 50%;
+    border: 3px solid #b10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-box img {
+    width: 40px;
+    height: auto;
+}
+
+.card h3 {
+    color: #d4af37;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #fff;
+    font-size: 14px;
 }
     
 /* ================================================== */
@@ -874,51 +897,64 @@ footer{
     </div>
 
 </section>
+
+/* ================================================== */
+/* PARTE 6 | PLATAFORMAS E APLICATIVOS                 */
+/* ================================================== */
     
-<section class="section plataformas-section">
-    <h2 class="section-title">Plataformas Compatíveis</h2>
+<section class="section apps-plataformas">
 
-    <div class="plataformas-grid">
+    <!-- TÍTULO -->
+    <h2 class="section-title">
+        Aplicativos e Plataformas Compatíveis
+    </h2>
 
-        <!-- ANDROID -->
-        <div class="plataforma-card">
-            <div class="plataforma-icone">
+    <p class="section-subtitle">
+        Assista em diversos dispositivos com total compatibilidade
+    </p>
+
+    <!-- APLICATIVOS -->
+    <div class="cards-grid">
+
+        <div class="card">
+            <div class="icon-box">
                 <img src="icon/android.png" alt="Android">
             </div>
             <h3>Android</h3>
-            <p>Celulares, Tablets e Android TV</p>
+            <p>Aplicativo oficial para celulares e TVs</p>
         </div>
 
-        <!-- APPLE -->
-        <div class="plataforma-card">
-            <div class="plataforma-icone">
+        <div class="card">
+            <div class="icon-box">
                 <img src="icon/apple.png" alt="Apple">
             </div>
             <h3>Apple</h3>
-            <p>iPhone, iPad e Apple TV</p>
+            <p>Compatível com iOS e Apple TV</p>
         </div>
 
-        <!-- COMPUTADOR -->
-        <div class="plataforma-card">
-            <div class="plataforma-icone">
+    </div>
+
+    <!-- PLATAFORMAS -->
+    <div class="cards-grid">
+
+        <div class="card">
+            <div class="icon-box">
                 <img src="icon/computer.png" alt="Computador">
             </div>
             <h3>Computador</h3>
             <p>Windows e macOS via navegador</p>
         </div>
 
-        <!-- SMART TV -->
-        <div class="plataforma-card">
-            <div class="plataforma-icone">
+        <div class="card">
+            <div class="icon-box">
                 <img src="icon/smart-tv.png" alt="Smart TV">
             </div>
             <h3>Smart TV</h3>
             <p>Samsung, LG e Android TV</p>
         </div>
 
-        <!-- TV BOX -->
-        <div class="plataforma-card">
-            <div class="plataforma-icone">
+        <div class="card">
+            <div class="icon-box">
                 <img src="icon/tv-box.png" alt="TV Box">
             </div>
             <h3>Dispositivo para TV</h3>
@@ -926,6 +962,7 @@ footer{
         </div>
 
     </div>
+
 </section>
     
 <!-- ================================================== -->
