@@ -399,54 +399,47 @@ footer{
     opacity:.85;
 }
 
-/* ==================================================
-   CORREÇÃO REAL – CATEGORIAS (DESKTOP)
-   ================================================== */
-
+/* ===== CATEGORIAS – DESKTOP ===== */
 @media (min-width: 1024px) {
 
-  /* Card */
-  #categorias .card {
-    padding: 32px 30px;
-  }
-
-  /* Lista vira grid em 2 colunas */
-  #categorias ul {
+  #categorias {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 30px;
-    row-gap: 6px;
-    max-width: 100%;
-    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
   }
 
-  /* Itens */
-  #categorias li {
-    font-size: 0.92rem;
-    line-height: 1.6;
+  #categorias .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 28px 26px;
+    height: 100%;
   }
 
-  /* Subtítulos dentro da lista */
-  #categorias li strong {
-    grid-column: span 2;
-    margin-top: 16px;
-    margin-bottom: 6px;
-    font-size: 0.95rem;
-    color: var(--dourado);
-  }
-
-  /* Título do card */
-  #categorias h3 {
-    text-align: center;
-    margin-bottom: 6px;
-  }
-
-  /* Texto de total */
+  #categorias h3,
   #categorias p {
     text-align: center;
-    margin-bottom: 22px;
+  }
+
+  #categorias ul {
+    margin-top: 18px;
+    padding: 0;
+    list-style: none;
+  }
+
+  #categorias li {
     font-size: 0.95rem;
-    color: var(--texto-sec);
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  #categorias li strong {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    color: var(--dourado);
+    font-size: 0.95rem;
   }
 }
 
@@ -685,168 +678,109 @@ footer{
 </section>
 
 <!-- ================================================== -->
-<!-- PARTE X - CATEGORIAS DO CATÁLOGO                   -->
+<!-- PARTE X - CATEGORIAS DE CONTEÚDO                   -->
+<!-- CANAIS | SÉRIES | FILMES                           -->
 <!-- ================================================== -->
 
 <section id="categorias">
 <div class="container">
 
     <h2 class="titulo">
-        Categorias do <span>Catálogo</span>
+        Categorias de <span>Conteúdo</span>
     </h2>
 
     <p class="subtexto">
-        Organização completa dos nossos conteúdos, separados por canais,
-        séries e filmes, para facilitar sua navegação.
+        Um dos maiores catálogos do Brasil, organizado para facilitar
+        sua navegação e oferecer sempre o melhor conteúdo.
     </p>
 
+    <!-- GRID DOS 3 CARDS -->
     <div style="
         display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+        grid-template-columns:repeat(3, 1fr);
         gap:24px;
-        max-width:1100px;
+        max-width:1200px;
         margin:40px auto 0;
-        text-align:center;
     ">
 
-        <!-- ===================== -->
-        <!-- CARD 1 - CANAIS       -->
-        <!-- ===================== -->
+        <!-- ================= CARD CANAIS ================= -->
         <div style="
             background:var(--preto-sec);
             border:2px solid var(--vermelho);
             border-radius:18px;
-            padding:30px 22px;
+            padding:26px 22px;
+            text-align:center;
         ">
-            <h3 style="color:var(--dourado);margin-bottom:6px;">
+            <h3 style="color:var(--dourado);margin-bottom:8px;">
                 Canais
             </h3>
 
-            <p style="color:var(--texto-sec);font-size:0.95rem;margin-bottom:16px;">
-                Total de <strong style="color:var(--dourado);">2.384 canais ao vivo</strong>
+            <p style="color:var(--texto-sec);margin-bottom:14px;">
+                <strong style="color:var(--dourado);">2.384 canais</strong> ao vivo
             </p>
 
-            <ul style="list-style:none;font-size:0.9rem;line-height:1.6;">
-                <li>Favoritos, Último Assistido, Área do Cliente</li>
-
-                <li><strong>Abertos e Regionais</strong></li>
-                <li>Globo (Sul, Sudeste, Centro-Oeste, Norte e Nordeste)</li>
-                <li>Record, Band, SBT, Abertos Regionais</li>
-                <li>A Fazenda 17, Estrela da Casa, Mr Olympia 2025</li>
-
-                <li style="margin-top:10px;"><strong>Internacionais</strong></li>
-                <li>Argentina, Colômbia, México, Paraguai, Equador</li>
-                <li>USA Regional, News, Kids, Music</li>
-                <li>USA Filmes, Séries, Documentários e Entretenimento</li>
-
-                <li style="margin-top:10px;"><strong>Esportes</strong></li>
-                <li>Premiere, SporTV, ESPN & TNT Sports</li>
-                <li>DAZN, Amazon Prime, Paramount+</li>
-                <li>PPV UFC, NBA League Pass, NFL Now</li>
-                <li>PPV Estaduais 2025, Kings League, Cazé TV</li>
-
-                <li style="margin-top:10px;"><strong>Entretenimento</strong></li>
-                <li>Telecine, HBO, Infantil, Documentários</li>
-                <li>Variedades, Religiosos, Música, Rádios</li>
-
-                <li style="margin-top:10px;"><strong>24 Horas</strong></li>
-                <li>Desenhos 24h, Séries 24h, Marvel 24h</li>
-                <li>Premium 24h, Shows 24h</li>
-
-                <li style="margin-top:10px;"><strong>Conteúdo Restrito 🔒<strong></li>
-                <li>Hetero | LGBT</li>
+            <ul style="list-style:none; font-size:0.95rem;">
+                <li>Canais Abertos e Regionais</li>
+                <li>Canais Internacionais</li>
+                <li>Esportes e PPV</li>
+                <li>Filmes e Séries</li>
+                <li>Infantil e Desenhos</li>
+                <li>Canais 24h</li>
+                <li>Conteúdo Adulto 🔒</li>
             </ul>
         </div>
 
-        <!-- ===================== -->
-        <!-- CARD 2 - SÉRIES       -->
-        <!-- ===================== -->
+        <!-- ================= CARD SÉRIES ================= -->
         <div style="
             background:var(--preto-sec);
             border:2px solid var(--vermelho);
             border-radius:18px;
-            padding:30px 22px;
+            padding:26px 22px;
+            text-align:center;
         ">
-            <h3 style="color:var(--dourado);margin-bottom:6px;">
+            <h3 style="color:var(--dourado);margin-bottom:8px;">
                 Séries
             </h3>
 
-            <p style="color:var(--texto-sec);font-size:0.95rem;margin-bottom:16px;">
-                Total de <strong style="color:var(--dourado);">5.431 séries</strong>
+            <p style="color:var(--texto-sec);margin-bottom:14px;">
+                <strong style="color:var(--dourado);">5.431 séries</strong> completas
             </p>
 
-            <ul style="list-style:none;font-size:0.9rem;line-height:1.6;">
-                <li>Favoritos, Último Assistido</li>
-                <li>Adicionados Recentemente</li>
-
-                <li style="margin-top:10px;"><strong>Categorias</strong></li>
-                <li>Novelas e Novelas Turcas</li>
-                <li>Dorama, Tokusatsu</li>
-                <li>Shorts</li>
-
-                <li style="margin-top:10px;"><strong>Animações</strong></li>
-                <li>Desenhos Animados</li>
+            <ul style="list-style:none; font-size:0.95rem;">
+                <li>Séries Nacionais e Internacionais</li>
+                <li>Novelas e Doramas</li>
+                <li>Animes Dublado e Legendado</li>
                 <li>Animações Clássicas</li>
-                <li>Anime (Dublado e Legendado)</li>
-
-                <li style="margin-top:10px;"><strong>Plataformas</strong></li>
-                <li>Netflix, Prime Video, Apple TV</li>
-                <li>Disney+, HBO, Starz, Paramount+</li>
-                <li>Globoplay, Discovery</li>
-                <li>Brasil Paralelo</li>
-
-                <li style="margin-top:10px;"><strong>Conteúdo Restrito 🔒</strong></li>
-                <li>XXX OnlyFans</li>
+                <li>Principais Plataformas</li>
+                <li>Conteúdo Exclusivo</li>
+                <li>OnlyFans 🔒</li>
             </ul>
         </div>
 
-        <!-- ===================== -->
-        <!-- CARD 3 - FILMES       -->
-        <!-- ===================== -->
+        <!-- ================= CARD FILMES ================= -->
         <div style="
             background:var(--preto-sec);
             border:2px solid var(--vermelho);
             border-radius:18px;
-            padding:30px 22px;
+            padding:26px 22px;
+            text-align:center;
         ">
-            <h3 style="color:var(--dourado);margin-bottom:6px;">
+            <h3 style="color:var(--dourado);margin-bottom:8px;">
                 Filmes
             </h3>
 
-            <p style="color:var(--texto-sec);font-size:0.95rem;margin-bottom:16px;">
-                Total de <strong style="color:var(--dourado);">27.703 filmes</strong>
+            <p style="color:var(--texto-sec);margin-bottom:14px;">
+                <strong style="color:var(--dourado);">27.703 filmes</strong> disponíveis
             </p>
 
-            <ul style="list-style:none;font-size:0.9rem;line-height:1.6;">
-                <li>Favoritos, Último Assistido</li>
-                <li>Adicionados Recentemente</li>
-                <li>Mais Assistidos da Semana</li>
-
-                <li style="margin-top:10px;"><strong>Lançamentos</strong></li>
-                <li>2025, 2024, 2023, 2022</li>
-                <li>Especial de Natal</li>
-
-                <li style="margin-top:10px;"><strong>Gêneros</strong></li>
-                <li>Ação & Aventura, Comédia, Romance</li>
-                <li>Drama & Suspense, Terror, Fantasia</li>
-                <li>Crime, Faroeste, Guerra</li>
-                <li>Clássicos e Clássicos Legendados</li>
-
-                <li style="margin-top:10px;"><strong>Universos</strong></li>
-                <li>Marvel Universe</li>
-                <li>DC Universe</li>
-
-                <li style="margin-top:10px;"><strong>Extras</strong></li>
-                <li>Nacional, Religioso, Shows</li>
-                <li>Documentários, 4K</li>
-                <li>Para Toda Família</li>
-
-                <li style="margin-top:10px;"><strong>Animações</strong></li>
-                <li>Desenhos Animados</li>
-                <li>Anime (Ova’s)</li>
-
-                <li style="margin-top:10px;"><strong>Conteúdo Restrito 🔒</strong></li>
-                <li>Hetero, Gay, Lésbica, Trans, Hentai</li>
+            <ul style="list-style:none; font-size:0.95rem;">
+                <li>Lançamentos Atualizados</li>
+                <li>Ação, Comédia e Drama</li>
+                <li>Terror, Suspense e Romance</li>
+                <li>Marvel e DC</li>
+                <li>Filmes Nacionais</li>
+                <li>Filmes em 4K</li>
+                <li>Conteúdo Adulto 🔒</li>
             </ul>
         </div>
 
@@ -854,7 +788,7 @@ footer{
 
 </div>
 </section>
-    
+
 <!-- ===================== -->
 <!-- PARTE 5 | PLANOS E VALORES -->
 <!-- ===================== -->
