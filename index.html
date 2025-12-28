@@ -243,67 +243,77 @@ section{
 }
 
 /* ================================================== */
-/* ÍCONE DOS PLANOS                                   */
+/* PARTE 6 | PLATAFORMAS E APLICATIVOS                 */
 /* ================================================== */
 
-.plano-icone{
-    width: 90px;
-    height: 90px;
-    margin: 0 auto 14px;
-    border-radius: 50%;
-    background: #ffffff;
-    border: 3px solid var(--vermelho);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all .35s ease;
+.plataformas-grid{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:26px;
+    max-width:1100px;
+    margin-left:auto;
+    margin-right:auto;
 }
 
-.plano-icone img{
-    width: 46px;
-    height: auto;
+.plataforma-card{
+    background:var(--preto-sec);
+    border:2px solid var(--vermelho);
+    border-radius:20px;
+    padding:30px 22px;
+    text-align:center;
+    transition:transform .35s ease, box-shadow .35s ease;
 }
 
-/* ================================================== */
-/* TEXTO DA PLATAFORMA                                */
-/* ================================================== */
-
-.plano-plataforma{
-    color: var(--dourado);
-    font-weight: bold;
-    font-size: 0.95rem;
-    margin-bottom: 6px;
-    text-align: center;
+.plataforma-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 22px rgba(212,175,55,.35);
 }
 
-/* ================================================== */
-/* APLICATIVOS                                        */
-/* ================================================== */
-
-.plano-apps{
-    color: var(--texto);
-    font-size: 0.85rem;
-    margin-bottom: 18px;
-    text-align: center;
-    opacity: .9;
+.plataforma-icone{
+    width:86px;
+    height:86px;
+    margin:0 auto 14px;
+    border-radius:50%;
+    background:#fff;
+    border:3px solid var(--vermelho);
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-/* ================================================== */
-/* EFEITO HOVER (MESMO PADRÃO DOS CARDS)               */
-/* ================================================== */
-
-.plano-card{
-    transition: all .35s ease;
+.plataforma-icone img{
+    width:46px;
+    height:auto;
 }
 
-.plano-card:hover{
-    transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(179,0,0,0.35);
+.plataforma-card h3{
+    color:var(--dourado);
+    margin-bottom:6px;
+    font-size:1.2rem;
 }
 
-.plano-card:hover .plano-icone{
-    transform: scale(1.08);
-    box-shadow: 0 0 18px rgba(179,0,0,0.6);
+.plataforma-desc{
+    font-size:0.9rem;
+    color:var(--texto-sec);
+    margin-bottom:14px;
+}
+
+.plataforma-card ul{
+    list-style:none;
+}
+
+.plataforma-card li{
+    color:var(--texto);
+    font-size:0.95rem;
+    margin-bottom:6px;
+}
+
+/* MOBILE */
+@media(max-width:480px){
+    .plataformas-grid{
+        grid-template-columns:1fr;
+    }
 }
 
 /* ================================================== */
@@ -870,147 +880,104 @@ footer{
 <!-- ================================================== -->
 
 <section id="plataformas">
-<div class="container">
+    <div class="container">
 
-    <h2 class="titulo">
-        Plataformas e <span>Aplicativos Compatíveis</span>
-    </h2>
+        <h2 class="titulo">
+            Plataformas e <span>Aplicativos Compatíveis</span>
+        </h2>
 
-    <p class="subtexto">
-        Utilize a MaxTV Pro nos principais dispositivos do mercado,
-        com aplicativos estáveis e compatíveis para cada plataforma.
-    </p>
+        <p class="subtexto">
+            Utilize a MaxTV Pro nos principais dispositivos do mercado,
+            com aplicativos estáveis e compatíveis.
+        </p>
 
-     <div style="
-         display:flex;
-         flex-direction:column;
-         gap:24px;
-         max-width:900px;
-         margin:40px auto 0;
-         text-align:left;
-     ">
+        <div class="plataformas-grid">
 
-        <!-- ANDROID -->
-        <div style="
-            background:var(--preto-sec);
-            border:2px solid var(--vermelho);
-            border-radius:18px;
-            padding:26px 22px;
-        ">
-            <h3 style="color:var(--dourado);margin-bottom:6px;">
-                Android
-            </h3>
-            <p style="font-size:0.9rem;color:var(--texto-sec);margin-bottom:12px;">
-                Celular, Tablet e TV Android
-            </p>
-            <ul style="list-style:none;">
-                <li>Atmos IBO</li>
-                <li>Downloader by AFTVnews</li>
-                <li>ntDown</li>
-            </ul>
-        </div>
+            <!-- ANDROID -->
+            <div class="plataforma-card">
+                <div class="plataforma-icone">
+                    <img src="icons/android.png" alt="Android">
+                </div>
+                <h3>Android</h3>
+                <p class="plataforma-desc">Celular, Tablet e TV Android</p>
+                <ul>
+                    <li>Atmos IBO</li>
+                    <li>Downloader by AFTVnews</li>
+                    <li>ntDown</li>
+                </ul>
+            </div>
 
-        <!-- IOS -->
-        <div style="
-            background:var(--preto-sec);
-            border:2px solid var(--vermelho);
-            border-radius:18px;
-            padding:26px 22px;
-        ">
-            <h3 style="color:var(--dourado);margin-bottom:6px;">
-                iOS
-            </h3>
-            <p style="font-size:0.9rem;color:var(--texto-sec);margin-bottom:12px;">
-                iPhone e iPad
-            </p>
-            <ul style="list-style:none;">
-                <li>IPTVX</li>
-            </ul>
-        </div>
+            <!-- IOS -->
+            <div class="plataforma-card">
+                <div class="plataforma-icone">
+                    <img src="icons/ios.png" alt="iOS">
+                </div>
+                <h3>iOS</h3>
+                <p class="plataforma-desc">iPhone e iPad</p>
+                <ul>
+                    <li>IPTVX</li>
+                </ul>
+            </div>
 
-        <!-- COMPUTADOR -->
-        <div style="
-            background:var(--preto-sec);
-            border:2px solid var(--vermelho);
-            border-radius:18px;
-            padding:26px 22px;
-        ">
-            <h3 style="color:var(--dourado);margin-bottom:6px;">
-                Computador
-            </h3>
-            <p style="font-size:0.9rem;color:var(--texto-sec);margin-bottom:12px;">
-                Windows, Mac e Linux
-            </p>
-            <ul style="list-style:none;">
-                <li>Web Player Oficial</li>
-            </ul>
-        </div>
+            <!-- COMPUTADOR -->
+            <div class="plataforma-card">
+                <div class="plataforma-icone">
+                    <img src="icons/computador.png" alt="Computador">
+                </div>
+                <h3>Computador</h3>
+                <p class="plataforma-desc">Windows, Mac e Linux</p>
+                <ul>
+                    <li>Web Player Oficial</li>
+                </ul>
+            </div>
 
-        <!-- SMART TV -->
-        <div style="
-            background:var(--preto-sec);
-            border:2px solid var(--vermelho);
-            border-radius:18px;
-            padding:26px 22px;
-        ">
-            <h3 style="color:var(--dourado);margin-bottom:6px;">
-                Smart TV
-            </h3>
-            <p style="font-size:0.9rem;color:var(--texto-sec);margin-bottom:12px;">
-                LG, Samsung 4K e Roku TV
-            </p>
-            <ul style="list-style:none;">
-                <li>Play Sim</li>
-                <li>Assist Plus</li>
-                <li>Fun Play</li>
-            </ul>
-        </div>
+            <!-- SMART TV -->
+            <div class="plataforma-card">
+                <div class="plataforma-icone">
+                    <img src="icons/tv.png" alt="Smart TV">
+                </div>
+                <h3>Smart TV</h3>
+                <p class="plataforma-desc">LG, Samsung 4K e Roku TV</p>
+                <ul>
+                    <li>Play Sim</li>
+                    <li>Assist Plus</li>
+                    <li>Fun Play</li>
+                </ul>
+            </div>
 
-        <!-- DISPOSITIVOS PARA TV -->
-        <div style="
-            background:var(--preto-sec);
-            border:2px solid var(--vermelho);
-            border-radius:18px;
-            padding:26px 22px;
-        ">
-            <h3 style="color:var(--dourado);margin-bottom:6px;">
-                Dispositivos para TV
-            </h3>
-            <p style="font-size:0.9rem;color:var(--texto-sec);margin-bottom:12px;">
-                Mi Stick, Fire Stick, Chromecast e TV Box
-            </p>
-            <ul style="list-style:none;">
-                <li>Atmos IBO</li>
-                <li>Play Sim</li>
-                <li>Assist Plus</li>
-                <li>Fun Play</li>
-                <li>Downloader by AFTVnews</li>
-                <li>Web Video Cast</li>
-            </ul>
-        </div>
+            <!-- DISPOSITIVOS TV -->
+            <div class="plataforma-card">
+                <div class="plataforma-icone">
+                    <img src="icons/tvbox.png" alt="TV Box">
+                </div>
+                <h3>Dispositivos para TV</h3>
+                <p class="plataforma-desc">Mi Stick, Fire Stick, Chromecast</p>
+                <ul>
+                    <li>Atmos IBO</li>
+                    <li>Play Sim</li>
+                    <li>Assist Plus</li>
+                    <li>Fun Play</li>
+                    <li>Downloader by AFTVnews</li>
+                    <li>Web Video Cast</li>
+                </ul>
+            </div>
 
-        <!-- PREMIUM -->
-        <div style="
-            background:var(--preto-sec);
-            border:2px solid var(--vermelho);
-            border-radius:18px;
-            padding:26px 22px;
-        ">
-            <h3 style="color:var(--dourado);margin-bottom:6px;">
-                Aplicativos Premium
-            </h3>
-            <p style="font-size:0.9rem;color:var(--texto-sec);margin-bottom:12px;">
-                Exclusivos para assinantes
-            </p>
-            <ul style="list-style:none;">
-                <li>Max Player</li>
-                <li>XCloud</li>
-            </ul>
+            <!-- PREMIUM -->
+            <div class="plataforma-card">
+                <div class="plataforma-icone">
+                    <img src="icons/premium.png" alt="Premium">
+                </div>
+                <h3>Aplicativos Premium</h3>
+                <p class="plataforma-desc">Exclusivos para assinantes</p>
+                <ul>
+                    <li>Max Player</li>
+                    <li>XCloud</li>
+                </ul>
+            </div>
+
         </div>
 
     </div>
-
-</div>
 </section>
 
 <!-- ================================================== -->
