@@ -238,6 +238,7 @@ section{
 
 #planos{
     background:#000;
+    text-align:center;
 }
 
 .planos-container{
@@ -292,24 +293,50 @@ section{
     align-items:center;
     justify-content:center;
     gap:12px;
+
     background:linear-gradient(135deg,#25d366,#1ebe5d);
-    color:#fff;
+    color:#fff !important;
+
     padding:14px 20px;
     border-radius:14px;
+
     font-weight:700;
-    text-decoration:none;
+    text-decoration:none !important;
+
+    box-shadow:
+        0 0 12px rgba(37,211,102,.6),
+        0 0 25px rgba(37,211,102,.4);
+
     transition:.3s ease;
 }
 
 .btn-whatsapp:hover{
     transform:scale(1.04);
+    box-shadow:
+        0 0 18px rgba(37,211,102,.9),
+        0 0 35px rgba(37,211,102,.7);
 }
 
+/* ÍCONE DO WHATSAPP */
 .icon-whatsapp{
     width:28px;
     height:28px;
-    background:url("https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg") no-repeat center;
+    background:url("https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg")
+    no-repeat center;
     background-size:contain;
+}
+
+/* TEXTO */
+.btn-whatsapp .texto{
+    display:flex;
+    flex-direction:column;
+    line-height:1.1;
+}
+
+.btn-whatsapp small{
+    font-size:12px;
+    font-weight:400;
+    opacity:.85;
 }
 
 /* ==================================================
@@ -430,8 +457,26 @@ footer{
     }
 }
 
+<!-- ================================================== -->
+<!-- PARTE 1 - ESTRUTURA BASE DO SITE                   -->
+<!-- ================================================== -->
 
-</style>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <!-- META TAGS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- TÍTULO -->
+    <title>MaxTV Pro | IPTV Premium</title>
+
+    <!-- CSS -->
+    <style>
+        /* COLE AQUI O CSS COMPLETO QUE EU TE MANDEI */
+    </style>
+
 </head>
 <body>
 
@@ -478,7 +523,7 @@ footer{
 </section>
 
 <!-- ================================================== -->
-<!-- PARTE 4 - DESTAQUE DOS FILMES (CARROSSEL INFINITO) -->
+<!-- PARTE 3 - DESTAQUE DE FILMES (CARROSSEL INFINITO)  -->
 <!-- ================================================== -->
 
 <section id="filmes">
@@ -527,8 +572,7 @@ footer{
 </section>
 
 <!-- ================================================== -->
-<!-- PARTE X - CATEGORIAS DE CONTEÚDO                   -->
-<!-- CANAIS | SÉRIES | FILMES                           -->
+<!-- PARTE 4 - CATEGORIAS DE CONTEÚDO                   -->
 <!-- ================================================== -->
 
 <section class="categorias-conteudo" id="categorias">
@@ -601,6 +645,7 @@ footer{
 <!-- ===================== -->
 <!-- PARTE 5 | PLANOS E VALORES -->
 <!-- ===================== -->
+
 
 <section id="planos" class="planos-section">
 
