@@ -757,6 +757,62 @@ footer{
             0 0 14px rgba(255, 0, 0, 0.35);
     }
 }
+
+/* =====================================
+   PADRÃO ABSOLUTO DE CARDS
+   Categorias | Planos | Aplicativos
+===================================== */
+
+/* CATEGORIAS */
+#categorias div[class*="card"],
+
+/* PLANOS */
+#planos div[class*="card"],
+#planos div[class*="plan"],
+
+/* APLICATIVOS */
+.apps-section div[class*="card"],
+.apps-section div[class*="platform"] {
+    background: linear-gradient(180deg, #0b0b0b, #050505) !important;
+    border: 2px solid rgba(255, 0, 0, 0.45) !important;
+    border-radius: 18px !important;
+    padding: 28px 22px !important;
+    text-align: center !important;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease !important;
+}
+
+/* =====================================
+   HOVER PADRONIZADO
+===================================== */
+
+#categorias div[class*="card"]:hover,
+#planos div[class*="card"]:hover,
+#planos div[class*="plan"]:hover,
+.apps-section div[class*="card"]:hover,
+.apps-section div[class*="platform"]:hover {
+    transform: translateY(-10px) scale(1.02) !important;
+    border-color: #ff0000 !important;
+    box-shadow:
+        0 0 22px rgba(255, 0, 0, 0.45),
+        0 0 55px rgba(255, 0, 0, 0.25) !important;
+}
+
+/* =====================================
+   MOBILE / TOQUE
+===================================== */
+
+@media (hover: none) {
+    #categorias div[class*="card"]:active,
+    #planos div[class*="card"]:active,
+    #planos div[class*="plan"]:active,
+    .apps-section div[class*="card"]:active,
+    .apps-section div[class*="platform"]:active {
+        transform: scale(0.97) !important;
+    }
+}
 </style>
 </head>
 <body>
