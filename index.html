@@ -706,7 +706,57 @@ footer{
         transform: scale(0.97);
     }
 }
-    
+
+/* ================================
+   PADRÃO GLOBAL – TODOS OS CARDS
+================================ */
+
+/* Categorias de Conteúdo */
+#categorias .card,
+
+/* Planos e Valores */
+#planos .plan-card,
+
+/* Aplicativos / Plataformas */
+.apps-section .platform-card {
+    background: linear-gradient(180deg, #0b0b0b, #050505);
+    border: 2px solid rgba(255, 0, 0, 0.45);
+    border-radius: 18px;
+    padding: 28px 22px;
+    text-align: center;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+/* ================================
+   HOVER PADRONIZADO
+================================ */
+
+#categorias .card:hover,
+#planos .plan-card:hover,
+.apps-section .platform-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: #ff0000;
+    box-shadow:
+        0 0 20px rgba(255, 0, 0, 0.45),
+        0 0 50px rgba(255, 0, 0, 0.25);
+}
+
+/* ================================
+   MOBILE / TOQUE
+================================ */
+
+@media (hover: none) {
+    #categorias .card:active,
+    #planos .plan-card:active,
+    .apps-section .platform-card:active {
+        transform: scale(0.97);
+        box-shadow:
+            0 0 14px rgba(255, 0, 0, 0.35);
+    }
+}
 </style>
 </head>
 <body>
