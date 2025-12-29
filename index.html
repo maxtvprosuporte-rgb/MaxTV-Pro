@@ -660,6 +660,53 @@ footer{
     }
 }
 
+/* ========================================= */
+/* PADRÃO GLOBAL DE CARDS (UNIFICADO)         */
+/* Categorias | Planos | Plataformas          */
+/* ========================================= */
+
+.card,
+.plan-card,
+.platform-card {
+    background: #0b0b0b;
+    border: 2px solid rgba(255, 0, 0, 0.45);
+    border-radius: 18px;
+    padding: 28px 22px;
+    text-align: center;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+/* ========================================= */
+/* HOVER PADRONIZADO (PC)                     */
+/* ========================================= */
+
+.card:hover,
+.plan-card:hover,
+.platform-card:hover {
+    transform: translateY(-8px);
+    border-color: #ff0000;
+
+    box-shadow:
+        0 0 18px rgba(255, 0, 0, 0.35),
+        0 0 40px rgba(255, 0, 0, 0.18);
+}
+
+/* ========================================= */
+/* MOBILE / TOUCH (SEM HOVER)                 */
+/* ========================================= */
+
+@media (hover: none) {
+    .card:active,
+    .plan-card:active,
+    .platform-card:active {
+        transform: scale(0.97);
+    }
+}
+    
 </style>
 </head>
 <body>
