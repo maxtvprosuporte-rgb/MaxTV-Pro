@@ -339,6 +339,58 @@ section{
     opacity:.85;
 }
 
+/* ================================
+   BOTÃO FLUTUANTE WHATSAPP
+================================ */
+
+.whatsapp-float{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    width: 62px;
+    height: 62px;
+
+    background: linear-gradient(135deg,#25d366,#1ebe5d);
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 15px rgba(37,211,102,.6),
+        0 0 30px rgba(37,211,102,.4);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+/* ÍCONE */
+.whatsapp-float::before{
+    content: "";
+    width: 32px;
+    height: 32px;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg")
+        no-repeat center;
+    background-size: contain;
+}
+
+/* HOVER (DESKTOP) */
+.whatsapp-float:hover{
+    transform: scale(1.08);
+    box-shadow:
+        0 0 20px rgba(37,211,102,.9),
+        0 0 45px rgba(37,211,102,.7);
+}
+
+/* MOBILE – TOQUE */
+@media (hover: none){
+    .whatsapp-float:active{
+        transform: scale(.95);
+    }
+}
+    
 /* ==================================================
    APLICATIVOS / PLATAFORMAS
 ================================================== */
@@ -920,6 +972,13 @@ footer{
 </div>
 </section>
 
+<!-- BOTÃO FLUTUANTE WHATSAPP -->
+<a href="https://wa.me/5541997043607"
+   target="_blank"
+   class="whatsapp-float"
+   aria-label="Teste grátis pelo WhatsApp">
+</a>
+    
 <!-- ================================================== -->
 <!-- FOOTER                                            -->
 <!-- ================================================== -->
