@@ -12,10 +12,11 @@
 <title>MaxTV Pro | IPTV Premium</title>
     
 <style>
-/* ================================================== */
-/* VARIÁVEIS                                         */
-/* ================================================== */
-    
+
+/* ==================================================
+   VARIÁVEIS
+================================================== */
+
 :root{
     --preto:#000000;
     --preto-sec:#0b0b0b;
@@ -25,10 +26,10 @@
     --texto-sec:#cccccc;
 }
 
-/* ================================================== */
-/* RESET                                             */
-/* ================================================== */
-    
+/* ==================================================
+   RESET
+================================================== */
+
 *{
     margin:0;
     padding:0;
@@ -36,10 +37,10 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
-/* ================================================== */
-/* BODY                                              */
-/* ================================================== */
-    
+/* ==================================================
+   BODY
+================================================== */
+
 body{
     background:var(--preto);
     color:var(--texto);
@@ -47,10 +48,10 @@ body{
     overflow-x:hidden;
 }
 
-/* ================================================== */
-/* ESTRUTURA                                         */
-/* ================================================== */
-    
+/* ==================================================
+   ESTRUTURA
+================================================== */
+
 section{
     width:100%;
     padding:60px 16px;
@@ -62,14 +63,13 @@ section{
     text-align:center;
 }
 
-/* ================================================== */
-/* TEXTOS                                            */
-/* ================================================== */
-    
+/* ==================================================
+   TEXTOS
+================================================== */
+
 .titulo{
     font-size:clamp(1.8rem,4vw,2.6rem);
     margin-bottom:20px;
-    text-align:center;
 }
 
 .titulo span{
@@ -81,13 +81,11 @@ section{
     margin:0 auto;
     font-size:clamp(1rem,2.5vw,1.1rem);
     color:var(--texto-sec);
-    text-align:center;
 }
 
 .titulo-secao{
     font-size:clamp(1.8rem,4vw,2.4rem);
     margin-bottom:14px;
-    text-align:center;
 }
 
 .subtitulo-secao{
@@ -95,22 +93,21 @@ section{
     margin:0 auto;
     font-size:1.05rem;
     color:var(--texto-sec);
-    text-align:center;
 }
 
-/* ================================================== */
-/* LOGO                                              */
-/* ================================================== */
-    
+/* ==================================================
+   LOGO
+================================================== */
+
 .logo img{
     width:190px;
     max-width:90%;
 }
 
-/* ================================================== */
-/* PARTE 3 - INFORMAÇÕES                              */
-/* ================================================== */
-    
+/* ==================================================
+   CARD INFO
+================================================== */
+
 .card-info{
     margin:40px auto 0;
     max-width:900px;
@@ -136,10 +133,10 @@ section{
     color:var(--texto-sec);
 }
 
-/* ================================================== */
-/* PARTE 4 - CARROSSEL                               */
-/* ================================================== */
-    
+/* ==================================================
+   CARROSSEL
+================================================== */
+
 .carousel-wrapper{
     overflow:hidden;
     width:100%;
@@ -176,12 +173,71 @@ section{
     to{ transform:translateX(-50%); }
 }
 
-/* ===================== */
-/* PARTE 5 | PLANOS     */
-/* ===================== */
+/* ==================================================
+   CATEGORIAS DE CONTEÚDO
+================================================== */
 
-#planos {
-    background: #000;
+.categorias-conteudo{
+    background:#000;
+    text-align:center;
+}
+
+.categorias-conteudo h2{
+    font-size:38px;
+    margin-bottom:16px;
+}
+
+.categorias-conteudo h2 span{
+    color:var(--dourado);
+}
+
+.categorias-conteudo p{
+    max-width:720px;
+    margin:0 auto 60px;
+    font-size:16px;
+    color:#bfbfbf;
+}
+
+.cards-categorias{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:32px;
+    max-width:1200px;
+    margin:0 auto;
+}
+
+.card-categoria h3{
+    font-size:24px;
+    color:var(--dourado);
+    margin-bottom:12px;
+}
+
+.card-categoria .quantidade{
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:24px;
+}
+
+.card-categoria ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    font-size:15px;
+    color:#cfcfcf;
+}
+
+.card-categoria ul li.lock{
+    color:#ff5a5a;
+    font-weight:600;
+}
+
+/* ==================================================
+   PLANOS
+================================================== */
+
+#planos{
+    background:#000;
 }
 
 .planos-container{
@@ -193,249 +249,122 @@ section{
     flex-wrap:wrap;
 }
 
-.plano-card{
-    background:var(--preto-sec);
-    border:2px solid var(--vermelho);
-    border-radius:20px;
-    padding:35px 25px;
-    max-width:360px;
-    width:100%;
+.plano-card h3{
+    color:var(--dourado);
+    font-size:1.5rem;
+    margin-bottom:14px;
+}
+
+.preco{
+    margin-bottom:20px;
+}
+
+.preco .valor{
+    font-size:2rem;
+    font-weight:bold;
+}
+
+.preco .periodo{
+    color:#aaa;
+    font-size:.95rem;
+}
+
+.lista-planos{
+    list-style:none;
+}
+
+.lista-planos li{
+    margin-bottom:8px;
+    color:var(--texto-sec);
+}
+
+.lista-planos strong{
+    color:var(--dourado);
+}
+
+/* ==================================================
+   BOTÃO WHATSAPP
+================================================== */
+
+.btn-whatsapp{
+    margin-top:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    background:linear-gradient(135deg,#25d366,#1ebe5d);
+    color:#fff;
+    padding:14px 20px;
+    border-radius:14px;
+    font-weight:700;
+    text-decoration:none;
+    transition:.3s ease;
+}
+
+.btn-whatsapp:hover{
+    transform:scale(1.04);
+}
+
+.icon-whatsapp{
+    width:28px;
+    height:28px;
+    background:url("https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg") no-repeat center;
+    background-size:contain;
+}
+
+/* ==================================================
+   APLICATIVOS / PLATAFORMAS
+================================================== */
+
+.apps-section{
+    background:#000;
     text-align:center;
 }
 
-.plano-card h3 {
-    color: var(--dourado);
-    font-size: 1.5rem;
-    margin-bottom: 14px;
-    text-align: center;
-}
-
-.preco {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.preco .valor {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--texto);
-}
-
-.preco .periodo {
-    color: #aaa;
-    font-size: 0.95rem;
-}
-
-.lista-planos {
-    list-style: none;
-    margin-top: 10px;
-}
-
-.lista-planos li {
-    margin-bottom: 8px;
-    color: var(--texto-sec);
-    font-size: 0.95rem;
-}
-
-.lista-planos strong {
-    color: var(--dourado);
-}
-
-/* ================================================== */
-/* PARTE 6 | PLATAFORMAS E APLICATIVOS                 */
-/* ================================================== */
-
-.plataformas-grid{
-    margin-top:40px;
+.cards-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-    gap:26px;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
     max-width:1100px;
-    margin-left:auto;
-    margin-right:auto;
+    margin:40px auto 0;
 }
 
-.plataforma-card{
-    background:var(--preto-sec);
-    border:2px solid var(--vermelho);
-    border-radius:20px;
-    padding:30px 22px;
-    text-align: center;
-    transition:transform .35s ease, box-shadow .35s ease;
-}
-
-.plataforma-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 0 22px rgba(212,175,55,.35);
-}
-
-.plataforma-icone{
-    width:86px;
-    height:86px;
-    margin:0 auto 14px;
-    border-radius:50%;
+.icon-box{
+    width:80px;
+    height:80px;
+    margin:0 auto 15px;
     background:#fff;
+    border-radius:50%;
     border:3px solid var(--vermelho);
     display:flex;
     align-items:center;
     justify-content:center;
 }
 
-.plataforma-icone img{
-    width:46px;
-    height:auto;
+.icon-box img{
+    width:40px;
 }
 
-.plataforma-card h3{
-    color:var(--dourado);
-    margin-bottom:6px;
-    font-size:1.2rem;
-}
-
-.plataforma-desc{
-    font-size:0.9rem;
-    color:var(--texto-sec);
-    margin-bottom:14px;
-}
-
-.plataforma-card ul{
+.app-list{
     list-style:none;
+    margin-top:12px;
 }
 
-.plataforma-card li{
-    color:var(--texto);
-    font-size:0.95rem;
-    margin-bottom:6px;
+.app-list li{
+    margin:6px 0;
+    font-size:14px;
 }
 
-/* MOBILE */
-@media(max-width:480px){
-    .plataformas-grid{
-        grid-template-columns:1fr;
-    }
-}
-
-.app-list {
-    list-style: none;      
-    padding: 0;            
-    margin: 12px 0 0 0;
-    text-align: center;    
-}
-
-.app-list li {
-    margin: 6px 0;
-    color: #ffffff;
-    font-size: 14px;
-}
-
-/* ================================================== */
-/* EFEITO HOVER | PLANOS E VALORES                     */
-/* MESMO PADRÃO DOS OUTROS CARDS                       */
-/* ================================================== */
-
-.plano-card {
-    transition: 
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
-}
-
-.plano-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 22px rgba(212, 175, 55, 0.35);
-    border-color: var(--dourado);
-}
-
-/* ================================================== */
-/* PARTE 6 - PLATAFORMAS (LISTA)                      */
-/* ================================================== */
-    
-.apps-plataformas {
-    background: #000;
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.section-title {
-    color: #d4af37;
-    font-size: 36px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.section-subtitle {
-    color: #ccc;
-    font-size: 16px;
-    margin-bottom: 50px;
-    text-align: center;
-}
-
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    max-width: 1100px;
-    margin: 0 auto 40px auto;
-}
-
-.card {
-    background: #0b0b0b;
-    border: 2px solid #b10000;
-    border-radius: 16px;
-    padding: 30px 20px;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 0 25px rgba(177, 0, 0, 0.6);
-}
-
-.icon-box {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 15px;
-    background: #fff;
-    border-radius: 50%;
-    border: 3px solid #b10000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.icon-box img {
-    width: 40px;
-    height: auto;
-}
-
-.card h3 {
-    color: #d4af37;
-    margin-bottom: 8px;
-}
-
-.card p {
-    color: #fff;
-    font-size: 14px;
-}
-    
-/* ================================================== */
-/* PARTE 7 - AVALIAÇÕES (LISTA)                       */
-/* ================================================== */
-    
-.avaliacoes{
-    max-width:900px;
-    margin:40px auto 0;
-    display:flex;
-    flex-direction:column;
-    gap:24px;
-}
+/* ==================================================
+   AVALIAÇÕES
+================================================== */
 
 .avaliacao{
     background:var(--preto-sec);
     border:2px solid var(--vermelho);
     border-radius:18px;
     padding:26px 22px;
+    margin-bottom:24px;
 }
 
 .avaliacao strong{
@@ -445,377 +374,61 @@ section{
 .avaliacao p{
     margin-top:10px;
     color:var(--texto-sec);
-    font-size:0.95rem;
-    line-height:1.6;
 }
 
-/* ================================================== */
-/* FOOTER                                            */
-/* ================================================== */
-    
+/* ==================================================
+   FOOTER
+================================================== */
+
 footer{
     background:#000;
     padding:22px 10px;
     text-align:center;
     color:#888;
-    font-size:0.9rem;
+    font-size:.9rem;
 }
 
-/* ================================================== */
-/* MOBILE                                            */
-/* ================================================== */
-    
-@media (max-width:480px){
-    section{ padding:45px 14px; }
-    .card-info{ padding:24px 18px; }
-}
+/* ==================================================
+   RESPONSIVO
+================================================== */
 
-/* ========================= */
-/* BOTÃO WHATSAPP – TESTE GRÁTIS */
-/* ========================= */
-
-.btn-whatsapp{
-    margin-top:20px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-
-    background:linear-gradient(135deg,#25d366,#1ebe5d);
-    color:#fff !important;
-
-    padding:14px 20px;
-    border-radius:14px;
-
-    font-weight:700;
-    text-decoration:none !important;
-
-    box-shadow:
-        0 0 12px rgba(37,211,102,.6),
-        0 0 25px rgba(37,211,102,.4);
-
-    transition:.3s ease;
-}
-
-.btn-whatsapp:hover{
-    transform:scale(1.04);
-    box-shadow:
-        0 0 18px rgba(37,211,102,.9),
-        0 0 35px rgba(37,211,102,.7);
-}
-
-/* ÍCONE DO WHATSAPP */
-.icon-whatsapp{
-    width:28px;
-    height:28px;
-    background:url("https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg")
-    no-repeat center;
-    background-size:contain;
-}
-
-/* TEXTO */
-.btn-whatsapp .texto{
-    display:flex;
-    flex-direction:column;
-    line-height:1.1;
-}
-
-.btn-whatsapp small{
-    font-size:12px;
-    font-weight:400;
-    opacity:.85;
-}
-
-/* ===============================
-   SEÇÃO CATEGORIAS DE CONTEÚDO
-================================ */
-
-.categorias-conteudo {
-    background: #000;
-    padding: 80px 20px;
-    text-align: center;
-}
-
-/* Título principal */
-.categorias-conteudo h2 {
-    font-size: 38px;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 16px;
-}
-
-.categorias-conteudo h2 span {
-    color: #d4af37;
-}
-
-/* Subtítulo */
-.categorias-conteudo p {
-    max-width: 720px;
-    margin: 0 auto 60px;
-    font-size: 16px;
-    color: #bfbfbf;
-    line-height: 1.6;
-}
-
-/* ===============================
-   GRID DOS CARDS (PC)
-================================ */
-
-.cards-categorias {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    max-width: 1200px;
-    margin: 0 auto;
-    align-items: stretch;
-}
-
-/* ===============================
-   CARD INDIVIDUAL
-================================ */
-
-.card-categoria {
-    background: linear-gradient(180deg, #0f0f0f, #070707);
-    border: 2px solid #b22222;
-    border-radius: 22px;
-    padding: 34px 28px;
-    min-height: 440px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-
-    transition: all 0.3s ease;
-}
-
-.card-categoria:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 25px rgba(178, 34, 34, 0.35);
-}
-
-/* ===============================
-   TÍTULO DO CARD
-================================ */
-
-.card-categoria h3 {
-    font-size: 24px;
-    color: #d4af37;
-    margin-bottom: 12px;
-}
-
-/* Quantidade */
-.card-categoria .quantidade {
-    font-size: 18px;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 24px;
-}
-
-/* ===============================
-   LISTA DE CATEGORIAS
-================================ */
-
-.card-categoria ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    font-size: 15px;
-    color: #cfcfcf;
-    text-align: center;
-}
-
-/* Cadeado */
-.card-categoria ul li.lock {
-    color: #ff5a5a;
-    font-weight: 600;
-}
-
-/* ===============================
-   RESPONSIVO – MOBILE
-================================ */
-
-@media (max-width: 900px) {
-    .cards-categorias {
-        grid-template-columns: 1fr;
-        max-width: 420px;
-    }
-
-    .card-categoria {
-        min-height: auto;
-        padding: 30px 24px;
-    }
-
-    .categorias-conteudo h2 {
-        font-size: 30px;
-    }
-
-    .card-categoria h3 {
-        font-size: 22px;
+@media(max-width:900px){
+    .cards-categorias{
+        grid-template-columns:1fr;
+        max-width:420px;
     }
 }
 
-/* ========================================= */
-/* PADRÃO GLOBAL DE CARDS (UNIFICADO)         */
-/* Categorias | Planos | Plataformas          */
-/* ========================================= */
+/* ==================================================
+   PADRÃO ÚNICO DE CARDS (OTIMIZADO)
+================================================== */
 
 .card,
-.plan-card,
-.platform-card {
-    background: #0b0b0b;
-    border: 2px solid rgba(255, 0, 0, 0.45);
-    border-radius: 18px;
-    padding: 28px 22px;
-    text-align: center;
-
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease;
+.plano-card,
+.card-categoria{
+    background:linear-gradient(180deg,#0b0b0b,#050505);
+    border:2px solid rgba(255,0,0,.45);
+    border-radius:18px;
+    padding:28px 22px;
+    text-align:center;
+    transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
 }
-
-/* ========================================= */
-/* HOVER PADRONIZADO (PC)                     */
-/* ========================================= */
 
 .card:hover,
-.plan-card:hover,
-.platform-card:hover {
-    transform: translateY(-8px);
-    border-color: #ff0000;
-
-    box-shadow:
-        0 0 18px rgba(255, 0, 0, 0.35),
-        0 0 40px rgba(255, 0, 0, 0.18);
+.plano-card:hover,
+.card-categoria:hover{
+    transform:translateY(-8px) scale(1.02);
+    border-color:#ff0000;
+    box-shadow:0 0 20px rgba(255,0,0,.35),0 0 45px rgba(255,0,0,.18);
 }
 
-/* ========================================= */
-/* MOBILE / TOUCH (SEM HOVER)                 */
-/* ========================================= */
-
-@media (hover: none) {
+@media (hover:none){
     .card:active,
-    .plan-card:active,
-    .platform-card:active {
-        transform: scale(0.97);
+    .plano-card:active,
+    .card-categoria:active{
+        transform:scale(.97);
     }
 }
-
-/* ================================
-   PADRÃO GLOBAL – TODOS OS CARDS
-================================ */
-
-/* Categorias de Conteúdo */
-#categorias .card,
-
-/* Planos e Valores */
-#planos .plan-card,
-
-/* Aplicativos / Plataformas */
-.apps-section .platform-card {
-    background: linear-gradient(180deg, #0b0b0b, #050505);
-    border: 2px solid rgba(255, 0, 0, 0.45);
-    border-radius: 18px;
-    padding: 28px 22px;
-    text-align: center;
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease;
-}
-
-/* ================================
-   HOVER PADRONIZADO
-================================ */
-
-#categorias .card:hover,
-#planos .plan-card:hover,
-.apps-section .platform-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    border-color: #ff0000;
-    box-shadow:
-        0 0 20px rgba(255, 0, 0, 0.45),
-        0 0 50px rgba(255, 0, 0, 0.25);
-}
-
-/* ================================
-   MOBILE / TOQUE
-================================ */
-
-@media (hover: none) {
-    #categorias .card:active,
-    #planos .plan-card:active,
-    .apps-section .platform-card:active {
-        transform: scale(0.97);
-        box-shadow:
-            0 0 14px rgba(255, 0, 0, 0.35);
-    }
-}
-
-/* =====================================
-   PADRÃO ABSOLUTO DE CARDS
-   Categorias | Planos | Aplicativos
-===================================== */
-
-/* CATEGORIAS */
-#categorias div[class*="card"],
-
-/* PLANOS */
-#planos div[class*="card"],
-#planos div[class*="plan"],
-
-/* APLICATIVOS */
-.apps-section div[class*="card"],
-.apps-section div[class*="platform"] {
-    background: linear-gradient(180deg, #0b0b0b, #050505) !important;
-    border: 2px solid rgba(255, 0, 0, 0.45) !important;
-    border-radius: 18px !important;
-    padding: 28px 22px !important;
-    text-align: center !important;
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease !important;
-}
-
-/* =====================================
-   HOVER PADRONIZADO
-===================================== */
-
-#categorias div[class*="card"]:hover,
-#planos div[class*="card"]:hover,
-#planos div[class*="plan"]:hover,
-.apps-section div[class*="card"]:hover,
-.apps-section div[class*="platform"]:hover {
-    transform: translateY(-10px) scale(1.02) !important;
-    border-color: #ff0000 !important;
-    box-shadow:
-        0 0 22px rgba(255, 0, 0, 0.45),
-        0 0 55px rgba(255, 0, 0, 0.25) !important;
-}
-
-/* =====================================
-   MOBILE / TOQUE
-===================================== */
-
-@media (hover: none) {
-    #categorias div[class*="card"]:active,
-    #planos div[class*="card"]:active,
-    #planos div[class*="plan"]:active,
-    .apps-section div[class*="card"]:active,
-    .apps-section div[class*="platform"]:active {
-        transform: scale(0.97) !important;
-    }
-}
-</style>
-</head>
-<body>
     
 <!-- ================================================== -->
 <!-- PARTE 1 - LOGOTIPO                                 -->
