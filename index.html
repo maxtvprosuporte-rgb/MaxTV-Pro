@@ -1,6 +1,6 @@
 <!-- ================================================== -->
 <!-- INÍCIO DO DOCUMENTO HTML                           -->
-<!-- PROJETO: SITE MAXTV PRO                             -->
+<!-- PROJETO: SITE MAXTV PRO - VERSÃO MELHORADA         -->
 <!-- ================================================== -->
 
 <!DOCTYPE html>
@@ -9,43 +9,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MaxTV Pro | IPTV Premium</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- SEO Meta Tags -->
+<title>MaxTV Pro | IPTV Premium - Mais de 10.000 Clientes Ativos</title>
+<meta name="description" content="O melhor streaming IPTV do Brasil com 10.000+ clientes ativos. 27.703 filmes, 5.431 séries, 2.384 canais ao vivo. Teste grátis de 6 horas. Qualidade 4K e estabilidade total.">
+<meta name="keywords" content="IPTV, streaming, canais ao vivo, filmes, séries, MaxTV Pro, IPTV Brasil, TV online">
+<meta name="author" content="MaxTV Pro">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://maxtvpro.com.br">
+<meta property="og:title" content="MaxTV Pro | IPTV Premium - O Melhor Streaming do Brasil">
+<meta property="og:description" content="Mais de 10.000 clientes ativos. 27.703 filmes, 5.431 séries e 2.384 canais ao vivo. Teste grátis de 6 horas!">
+<meta property="og:image" content="icon/logo.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://maxtvpro.com.br">
+<meta property="twitter:title" content="MaxTV Pro | IPTV Premium">
+<meta property="twitter:description" content="O melhor streaming IPTV do Brasil. Teste grátis de 6 horas!">
+<meta property="twitter:image" content="icon/logo.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="icon/logo.png">
+
+<!-- Preconnect for Performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
 <style>
 
 /* ==================================================
-   VARIÁVEIS
+   VARIÁVEIS CSS
 ================================================== */
 
 :root{
     --preto:#000000;
     --preto-sec:#0b0b0b;
+    --preto-card:#050505;
     --vermelho:#b30000;
+    --vermelho-hover:#ff0000;
     --dourado:#d4af37;
+    --dourado-claro:#ffd700;
     --texto:#ffffff;
     --texto-sec:#cccccc;
+    --texto-terciario:#999999;
+    --verde-whats:#25d366;
+    --verde-whats-hover:#1ebe5d;
+    --border-card:rgba(255,0,0,.45);
+    --shadow-card:rgba(255,0,0,.35);
+    --shadow-card-hover:rgba(255,0,0,.18);
 }
 
 /* ==================================================
-   RESET
+   RESET E BASE
 ================================================== */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
 }
 
-/* ==================================================
-   BODY
-================================================== */
+html{
+    scroll-behavior:smooth;
+}
 
 body{
     background:var(--preto);
     color:var(--texto);
     line-height:1.6;
     overflow-x:hidden;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* ==================================================
@@ -55,6 +92,7 @@ body{
 section{
     width:100%;
     padding:60px 16px;
+    position:relative;
 }
 
 .container{
@@ -64,16 +102,22 @@ section{
 }
 
 /* ==================================================
-   TEXTOS
+   TIPOGRAFIA
 ================================================== */
 
 .titulo{
     font-size:clamp(1.8rem,4vw,2.6rem);
     margin-bottom:20px;
+    font-weight:700;
+    animation:fadeInUp 0.8s ease;
 }
 
 .titulo span{
     color:var(--dourado);
+    background:linear-gradient(135deg, var(--dourado), var(--dourado-claro));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
 }
 
 .subtexto{
@@ -81,11 +125,13 @@ section{
     margin:0 auto;
     font-size:clamp(1rem,2.5vw,1.1rem);
     color:var(--texto-sec);
+    animation:fadeInUp 0.8s ease 0.2s both;
 }
 
 .titulo-secao{
     font-size:clamp(1.8rem,4vw,2.4rem);
     margin-bottom:14px;
+    font-weight:700;
 }
 
 .subtitulo-secao{
@@ -93,15 +139,63 @@ section{
     margin:0 auto;
     font-size:1.05rem;
     color:var(--texto-sec);
+    animation:fadeInUp 0.8s ease 0.2s both;
+}
+
+/* ==================================================
+   ANIMAÇÕES
+================================================== */
+
+@keyframes fadeInUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeIn{
+    from{ opacity:0; }
+    to{ opacity:1; }
+}
+
+@keyframes scaleIn{
+    from{
+        opacity:0;
+        transform:scale(0.9);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes pulse{
+    0%, 100%{ transform:scale(1); }
+    50%{ transform:scale(1.05); }
 }
 
 /* ==================================================
    LOGO
 ================================================== */
 
+.logo{
+    padding:40px 16px;
+    animation:fadeIn 1s ease;
+}
+
 .logo img{
     width:190px;
     max-width:90%;
+    filter:drop-shadow(0 0 20px rgba(212,175,55,0.3));
+    transition:transform 0.3s ease;
+}
+
+.logo img:hover{
+    transform:scale(1.05);
 }
 
 /* ==================================================
@@ -111,11 +205,12 @@ section{
 .card-info{
     margin:40px auto 0;
     max-width:900px;
-    background:var(--preto-sec);
+    background:linear-gradient(180deg, var(--preto-sec), var(--preto-card));
     border:2px solid var(--vermelho);
     border-radius:18px;
     padding:30px 22px;
     text-align:left;
+    animation:scaleIn 0.8s ease;
 }
 
 .card-info h3{
@@ -134,32 +229,51 @@ section{
 }
 
 /* ==================================================
-   CARROSSEL
+   CARROSSEL MELHORADO
 ================================================== */
 
+.carousel-container{
+    position:relative;
+    max-width:100%;
+    margin:40px auto;
+    overflow:hidden;
+}
+
 .carousel-wrapper{
+    position:relative;
     overflow:hidden;
     width:100%;
-    margin-top:30px;
-    cursor:grab;
+    padding:20px 0;
 }
 
 .carousel-track{
     display:flex;
-    width:max-content;
-    animation:scrollLoop 35s linear infinite;
+    gap:16px;
+    transition:transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change:transform;
 }
 
-.carousel-wrapper:hover .carousel-track{
-    animation-play-state:paused;
+.carousel-track.dragging{
+    transition:none;
+    cursor:grabbing;
 }
 
 .carousel-track img{
     width:140px;
-    margin-right:16px;
+    height:auto;
     border-radius:14px;
     border:2px solid var(--vermelho);
     flex-shrink:0;
+    cursor:pointer;
+    transition:all 0.3s ease;
+    box-shadow:0 4px 15px rgba(0,0,0,0.5);
+}
+
+.carousel-track img:hover{
+    transform:scale(1.08) translateY(-5px);
+    border-color:var(--vermelho-hover);
+    box-shadow:0 8px 25px rgba(179,0,0,0.6);
+    z-index:10;
 }
 
 @media (min-width:768px){
@@ -168,9 +282,75 @@ section{
     }
 }
 
-@keyframes scrollLoop{
-    from{ transform:translateX(0); }
-    to{ transform:translateX(-50%); }
+/* Controles do Carrossel */
+.carousel-controls{
+    position:absolute;
+    top:50%;
+    width:100%;
+    transform:translateY(-50%);
+    display:flex;
+    justify-content:space-between;
+    pointer-events:none;
+    z-index:10;
+    padding:0 10px;
+}
+
+.carousel-btn{
+    pointer-events:all;
+    background:rgba(179,0,0,0.9);
+    border:none;
+    color:white;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:all 0.3s ease;
+    box-shadow:0 4px 15px rgba(0,0,0,0.5);
+}
+
+.carousel-btn:hover{
+    background:var(--vermelho-hover);
+    transform:scale(1.1);
+    box-shadow:0 6px 20px rgba(255,0,0,0.6);
+}
+
+.carousel-btn:active{
+    transform:scale(0.95);
+}
+
+@media (max-width:768px){
+    .carousel-btn{
+        width:38px;
+        height:38px;
+        font-size:16px;
+    }
+}
+
+/* Indicadores */
+.carousel-indicators{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin-top:20px;
+}
+
+.indicator{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.3);
+    cursor:pointer;
+    transition:all 0.3s ease;
+}
+
+.indicator.active{
+    background:var(--dourado);
+    width:24px;
+    border-radius:5px;
 }
 
 /* ==================================================
@@ -178,13 +358,14 @@ section{
 ================================================== */
 
 .categorias-conteudo{
-    background:#000;
+    background:var(--preto);
     text-align:center;
 }
 
 .categorias-conteudo h2{
-    font-size:38px;
+    font-size:clamp(2rem,4vw,2.8rem);
     margin-bottom:16px;
+    animation:fadeInUp 0.8s ease;
 }
 
 .categorias-conteudo h2 span{
@@ -194,8 +375,9 @@ section{
 .categorias-conteudo p{
     max-width:720px;
     margin:0 auto 60px;
-    font-size:16px;
-    color:#bfbfbf;
+    font-size:1.05rem;
+    color:var(--texto-sec);
+    animation:fadeInUp 0.8s ease 0.2s both;
 }
 
 .cards-categorias{
@@ -207,15 +389,16 @@ section{
 }
 
 .card-categoria h3{
-    font-size:24px;
+    font-size:1.7rem;
     color:var(--dourado);
     margin-bottom:12px;
 }
 
 .card-categoria .quantidade{
-    font-size:18px;
+    font-size:1.15rem;
     font-weight:600;
     margin-bottom:24px;
+    color:var(--texto);
 }
 
 .card-categoria ul{
@@ -223,8 +406,8 @@ section{
     display:flex;
     flex-direction:column;
     gap:10px;
-    font-size:15px;
-    color:#cfcfcf;
+    font-size:0.95rem;
+    color:var(--texto-sec);
 }
 
 .card-categoria ul li.lock{
@@ -237,7 +420,7 @@ section{
 ================================================== */
 
 .planos{
-    background:#000;
+    background:var(--preto);
     text-align:center;
 }
 
@@ -252,7 +435,7 @@ section{
 
 .plano-card h3{
     color:var(--dourado);
-    font-size:1.5rem;
+    font-size:1.6rem;
     margin-bottom:14px;
 }
 
@@ -261,26 +444,30 @@ section{
 }
 
 .preco .valor{
-    font-size:2rem;
+    font-size:2.2rem;
     font-weight:bold;
+    color:var(--texto);
 }
 
 .preco .periodo{
-    color:#aaa;
-    font-size:.95rem;
+    color:var(--texto-terciario);
+    font-size:0.95rem;
 }
 
 .lista-planos{
     list-style:none;
+    margin-bottom:20px;
 }
 
 .lista-planos li{
-    margin-bottom:8px;
+    margin-bottom:10px;
     color:var(--texto-sec);
+    font-size:0.95rem;
 }
 
 .lista-planos strong{
     color:var(--dourado);
+    font-weight:600;
 }
 
 /* ==================================================
@@ -289,32 +476,36 @@ section{
 
 .btn-whatsapp{
     margin-top:20px;
-    display:flex;
+    display:inline-flex;
     align-items:center;
     justify-content:center;
     gap:12px;
 
-    background:linear-gradient(135deg,#25d366,#1ebe5d);
+    background:linear-gradient(135deg, var(--verde-whats), var(--verde-whats-hover));
     color:#fff !important;
 
-    padding:14px 20px;
+    padding:16px 24px;
     border-radius:14px;
 
     font-weight:700;
     text-decoration:none !important;
 
     box-shadow:
-        0 0 12px rgba(37,211,102,.6),
-        0 0 25px rgba(37,211,102,.4);
+        0 4px 15px rgba(37,211,102,.4),
+        0 8px 30px rgba(37,211,102,.2);
 
-    transition:.3s ease;
+    transition:all 0.3s ease;
 }
 
 .btn-whatsapp:hover{
-    transform:scale(1.04);
+    transform:translateY(-3px) scale(1.03);
     box-shadow:
-        0 0 18px rgba(37,211,102,.9),
-        0 0 35px rgba(37,211,102,.7);
+        0 6px 20px rgba(37,211,102,.6),
+        0 12px 40px rgba(37,211,102,.3);
+}
+
+.btn-whatsapp:active{
+    transform:translateY(-1px) scale(0.98);
 }
 
 /* ÍCONE DO WHATSAPP */
@@ -330,13 +521,14 @@ section{
 .btn-whatsapp .texto{
     display:flex;
     flex-direction:column;
-    line-height:1.1;
+    line-height:1.2;
+    text-align:left;
 }
 
 .btn-whatsapp small{
     font-size:12px;
     font-weight:400;
-    opacity:.85;
+    opacity:.9;
 }
 
 /* ================================
@@ -344,50 +536,52 @@ section{
 ================================ */
 
 .whatsapp-float{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+    position:fixed;
+    bottom:25px;
+    right:25px;
 
-    width: 62px;
-    height: 62px;
+    width:62px;
+    height:62px;
 
-    background: linear-gradient(135deg,#25d366,#1ebe5d);
-    border-radius: 50%;
+    background:linear-gradient(135deg, var(--verde-whats), var(--verde-whats-hover));
+    border-radius:50%;
 
     box-shadow:
-        0 0 15px rgba(37,211,102,.6),
-        0 0 30px rgba(37,211,102,.4);
+        0 4px 20px rgba(37,211,102,.5),
+        0 8px 40px rgba(37,211,102,.3);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-    z-index: 9999;
-    transition: transform .25s ease, box-shadow .25s ease;
+    z-index:9999;
+    transition:all 0.3s ease;
+    animation:pulse 2s ease infinite;
 }
 
 /* ÍCONE */
 .whatsapp-float::before{
-    content: "";
-    width: 32px;
-    height: 32px;
-    background: url("https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg")
+    content:"";
+    width:32px;
+    height:32px;
+    background:url("https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg")
         no-repeat center;
-    background-size: contain;
+    background-size:contain;
 }
 
 /* HOVER (DESKTOP) */
 .whatsapp-float:hover{
-    transform: scale(1.08);
+    transform:scale(1.1) translateY(-3px);
     box-shadow:
-        0 0 20px rgba(37,211,102,.9),
-        0 0 45px rgba(37,211,102,.7);
+        0 6px 25px rgba(37,211,102,.7),
+        0 12px 50px rgba(37,211,102,.4);
+    animation:none;
 }
 
 /* MOBILE – TOQUE */
-@media (hover: none){
+@media (hover:none){
     .whatsapp-float:active{
-        transform: scale(.95);
+        transform:scale(0.95);
     }
 }
     
@@ -396,15 +590,22 @@ section{
 ================================================== */
 
 .apps-section{
-    background:#000;
+    background:var(--preto);
     text-align:center;
+}
+
+.section-subtitle{
+    max-width:720px;
+    margin:0 auto 50px;
+    font-size:1.05rem;
+    color:var(--texto-sec);
 }
 
 .cards-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
     gap:30px;
-    max-width:1100px;
+    max-width:1200px;
     margin:40px auto 0;
 }
 
@@ -418,10 +619,30 @@ section{
     display:flex;
     align-items:center;
     justify-content:center;
+    transition:all 0.3s ease;
+}
+
+.card:hover .icon-box{
+    transform:scale(1.1) rotateY(360deg);
+    border-color:var(--dourado);
 }
 
 .icon-box img{
     width:40px;
+    height:auto;
+}
+
+.card h3{
+    font-size:1.4rem;
+    margin-bottom:8px;
+    color:var(--texto);
+}
+
+.card-subtitle{
+    display:block;
+    font-size:0.85rem;
+    color:var(--texto-terciario);
+    margin-bottom:15px;
 }
 
 .app-list{
@@ -430,29 +651,156 @@ section{
 }
 
 .app-list li{
-    margin:6px 0;
-    font-size:14px;
+    margin:8px 0;
+    font-size:0.9rem;
+    color:var(--texto-sec);
 }
 
 /* ==================================================
    AVALIAÇÕES
 ================================================== */
 
+.avaliacoes-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap:24px;
+    max-width:1100px;
+    margin:40px auto 0;
+}
+
 .avaliacao{
-    background:var(--preto-sec);
-    border:2px solid var(--vermelho);
+    background:linear-gradient(180deg, var(--preto-sec), var(--preto-card));
+    border:2px solid var(--border-card);
     border-radius:18px;
     padding:26px 22px;
-    margin-bottom:24px;
+    text-align:left;
+    transition:all 0.3s ease;
+}
+
+.avaliacao:hover{
+    transform:translateY(-5px);
+    border-color:var(--vermelho-hover);
+    box-shadow:0 8px 25px var(--shadow-card);
 }
 
 .avaliacao strong{
     color:var(--dourado);
+    font-size:1.1rem;
+}
+
+.avaliacao .stars{
+    margin:5px 0;
+    font-size:1.1rem;
 }
 
 .avaliacao p{
-    margin-top:10px;
+    margin-top:12px;
     color:var(--texto-sec);
+    line-height:1.6;
+    font-size:0.95rem;
+}
+
+/* ==================================================
+   FAQ SECTION
+================================================== */
+
+.faq-section{
+    background:var(--preto);
+    padding:80px 16px;
+}
+
+.faq-container{
+    max-width:900px;
+    margin:40px auto 0;
+}
+
+.faq-item{
+    background:linear-gradient(180deg, var(--preto-sec), var(--preto-card));
+    border:2px solid var(--border-card);
+    border-radius:14px;
+    margin-bottom:16px;
+    overflow:hidden;
+    transition:all 0.3s ease;
+}
+
+.faq-item:hover{
+    border-color:var(--vermelho);
+}
+
+.faq-question{
+    width:100%;
+    background:none;
+    border:none;
+    color:var(--texto);
+    padding:20px 24px;
+    text-align:left;
+    font-size:1.1rem;
+    font-weight:600;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    transition:all 0.3s ease;
+}
+
+.faq-question:hover{
+    color:var(--dourado);
+}
+
+.faq-question .icon{
+    font-size:1.5rem;
+    transition:transform 0.3s ease;
+}
+
+.faq-item.active .faq-question .icon{
+    transform:rotate(45deg);
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.3s ease, padding 0.3s ease;
+    padding:0 24px;
+}
+
+.faq-item.active .faq-answer{
+    max-height:500px;
+    padding:0 24px 20px 24px;
+}
+
+.faq-answer p{
+    color:var(--texto-sec);
+    line-height:1.7;
+}
+
+/* ==================================================
+   CONTADOR ANIMADO
+================================================== */
+
+.stats-container{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+    margin:40px auto;
+    max-width:1000px;
+}
+
+.stat-item{
+    text-align:center;
+}
+
+.stat-number{
+    font-size:clamp(2rem, 5vw, 3rem);
+    font-weight:bold;
+    color:var(--dourado);
+    display:block;
+}
+
+.stat-label{
+    font-size:1rem;
+    color:var(--texto-sec);
+    margin-top:8px;
 }
 
 /* ==================================================
@@ -460,22 +808,16 @@ section{
 ================================================== */
 
 footer{
-    background:#000;
-    padding:22px 10px;
+    background:var(--preto);
+    padding:30px 16px;
     text-align:center;
-    color:#888;
-    font-size:.9rem;
+    color:var(--texto-terciario);
+    font-size:0.9rem;
+    border-top:1px solid rgba(255,255,255,0.1);
 }
 
-/* ==================================================
-   RESPONSIVO
-================================================== */
-
-@media(max-width:900px){
-    .cards-categorias{
-        grid-template-columns:1fr;
-        max-width:420px;
-    }
+footer p{
+    margin:5px 0;
 }
 
 /* ==================================================
@@ -485,28 +827,103 @@ footer{
 .card,
 .plano-card,
 .card-categoria{
-    background:linear-gradient(180deg,#0b0b0b,#050505);
-    border:2px solid rgba(255,0,0,.45);
+    background:linear-gradient(180deg, var(--preto-sec), var(--preto-card));
+    border:2px solid var(--border-card);
     border-radius:18px;
-    padding:28px 22px;
+    padding:32px 24px;
     text-align:center;
-    transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+    transition:all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before,
+.plano-card::before,
+.card-categoria::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(135deg, rgba(212,175,55,0.05), rgba(179,0,0,0.05));
+    opacity:0;
+    transition:opacity 0.3s ease;
+    pointer-events:none;
 }
 
 .card:hover,
 .plano-card:hover,
 .card-categoria:hover{
     transform:translateY(-8px) scale(1.02);
-    border-color:#ff0000;
-    box-shadow:0 0 20px rgba(255,0,0,.35),0 0 45px rgba(255,0,0,.18);
+    border-color:var(--vermelho-hover);
+    box-shadow:
+        0 8px 30px var(--shadow-card),
+        0 15px 60px var(--shadow-card-hover);
+}
+
+.card:hover::before,
+.plano-card:hover::before,
+.card-categoria:hover::before{
+    opacity:1;
 }
 
 @media (hover:none){
     .card:active,
     .plano-card:active,
     .card-categoria:active{
-        transform:scale(.97);
+        transform:scale(0.98);
     }
+}
+
+/* ==================================================
+   RESPONSIVO
+================================================== */
+
+@media(max-width:900px){
+    .cards-categorias{
+        grid-template-columns:1fr;
+        max-width:500px;
+    }
+    
+    .planos-container{
+        flex-direction:column;
+        max-width:450px;
+    }
+    
+    .avaliacoes-grid{
+        grid-template-columns:1fr;
+        max-width:500px;
+    }
+    
+    section{
+        padding:50px 16px;
+    }
+}
+
+@media(max-width:600px){
+    .stats-container{
+        gap:30px;
+    }
+    
+    .carousel-controls{
+        padding:0 5px;
+    }
+}
+
+/* ==================================================
+   SCROLL REVEAL - ELEMENTS APPEAR ON SCROLL
+================================================== */
+
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:all 0.8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
 }
 
 </style>
@@ -519,7 +936,7 @@ footer{
     
 <section id="topo" class="logo">
 <div class="container">
-    <img src="icon/logo.png" alt="MaxTV Pro">
+    <img src="icon/logo.png" alt="MaxTV Pro - Melhor IPTV do Brasil" loading="eager">
 </div>
 </section>
 
@@ -552,14 +969,34 @@ footer{
         em IPTV premium.
     </p>
 
+    <!-- Contador Animado -->
+    <div class="stats-container reveal">
+        <div class="stat-item">
+            <span class="stat-number" data-target="10000">0</span>
+            <span class="stat-label">Clientes Ativos</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" data-target="27703">0</span>
+            <span class="stat-label">Filmes Disponíveis</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" data-target="5431">0</span>
+            <span class="stat-label">Séries Completas</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" data-target="2384">0</span>
+            <span class="stat-label">Canais ao Vivo</span>
+        </div>
+    </div>
+
 </div>
 </section>
 
 <!-- ================================================== -->
-<!-- PARTE 3 - DESTAQUE DE FILMES (CARROSSEL INFINITO)  -->
+<!-- PARTE 3 - DESTAQUE DE FILMES (CARROSSEL MELHORADO) -->
 <!-- ================================================== -->
 
-<section id="filmes">
+<section id="filmes" class="reveal">
 <div class="container">
 
     <h2 class="titulo">
@@ -572,35 +1009,25 @@ footer{
     </p>
 
     <!-- PRIMEIRO CARROSSEL -->
-    <div class="carousel-wrapper">
-        <div class="carousel-track">
-
-            <div class="carousel-set">
-                <img src="banners_filmes/img_01.jpeg">
-                <img src="banners_filmes/img_02.jpeg">
-                <img src="banners_filmes/img_03.jpeg">
-                <img src="banners_filmes/img_04.jpeg">
-                <img src="banners_filmes/img_05.jpeg">
-                <img src="banners_filmes/img_06.jpeg">
-                <img src="banners_filmes/img_07.jpeg">
-                <img src="banners_filmes/img_08.jpeg">
-                <img src="banners_filmes/img_09.jpeg">
-                <img src="banners_filmes/img_10.jpeg">
+    <div class="carousel-container">
+        <div class="carousel-wrapper" id="carousel1">
+            <div class="carousel-track">
+                <img src="banners_filmes/img_01.jpeg" alt="Filme 1" loading="lazy">
+                <img src="banners_filmes/img_02.jpeg" alt="Filme 2" loading="lazy">
+                <img src="banners_filmes/img_03.jpeg" alt="Filme 3" loading="lazy">
+                <img src="banners_filmes/img_04.jpeg" alt="Filme 4" loading="lazy">
+                <img src="banners_filmes/img_05.jpeg" alt="Filme 5" loading="lazy">
+                <img src="banners_filmes/img_06.jpeg" alt="Filme 6" loading="lazy">
+                <img src="banners_filmes/img_07.jpeg" alt="Filme 7" loading="lazy">
+                <img src="banners_filmes/img_08.jpeg" alt="Filme 8" loading="lazy">
+                <img src="banners_filmes/img_09.jpeg" alt="Filme 9" loading="lazy">
+                <img src="banners_filmes/img_10.jpeg" alt="Filme 10" loading="lazy">
             </div>
-
-            <div class="carousel-set">
-                <img src="banners_filmes/img_01.jpeg">
-                <img src="banners_filmes/img_02.jpeg">
-                <img src="banners_filmes/img_03.jpeg">
-                <img src="banners_filmes/img_04.jpeg">
-                <img src="banners_filmes/img_05.jpeg">
-                <img src="banners_filmes/img_06.jpeg">
-                <img src="banners_filmes/img_07.jpeg">
-                <img src="banners_filmes/img_08.jpeg">
-                <img src="banners_filmes/img_09.jpeg">
-                <img src="banners_filmes/img_10.jpeg">
-            </div>
-
+        </div>
+        
+        <div class="carousel-controls">
+            <button class="carousel-btn" data-carousel="carousel1" data-direction="prev" aria-label="Anterior">‹</button>
+            <button class="carousel-btn" data-carousel="carousel1" data-direction="next" aria-label="Próximo">›</button>
         </div>
     </div>
 
@@ -614,35 +1041,25 @@ footer{
     </p>
 
     <!-- SEGUNDO CARROSSEL -->
-    <div class="carousel-wrapper" style="margin-top:20px;">
-        <div class="carousel-track">
-
-            <div class="carousel-set">
-                <img src="banners_divulgacao/img_01.jpeg">
-                <img src="banners_divulgacao/img_02.jpeg">
-                <img src="banners_divulgacao/img_03.jpeg">
-                <img src="banners_divulgacao/img_04.jpeg">
-                <img src="banners_divulgacao/img_05.jpeg">
-                <img src="banners_divulgacao/img_06.jpeg">
-                <img src="banners_divulgacao/img_07.jpeg">
-                <img src="banners_divulgacao/img_08.jpeg">
-                <img src="banners_divulgacao/img_09.jpeg">
-                <img src="banners_divulgacao/img_10.jpeg">
+    <div class="carousel-container">
+        <div class="carousel-wrapper" id="carousel2">
+            <div class="carousel-track">
+                <img src="banners_divulgacao/img_01.jpeg" alt="Categoria 1" loading="lazy">
+                <img src="banners_divulgacao/img_02.jpeg" alt="Categoria 2" loading="lazy">
+                <img src="banners_divulgacao/img_03.jpeg" alt="Categoria 3" loading="lazy">
+                <img src="banners_divulgacao/img_04.jpeg" alt="Categoria 4" loading="lazy">
+                <img src="banners_divulgacao/img_05.jpeg" alt="Categoria 5" loading="lazy">
+                <img src="banners_divulgacao/img_06.jpeg" alt="Categoria 6" loading="lazy">
+                <img src="banners_divulgacao/img_07.jpeg" alt="Categoria 7" loading="lazy">
+                <img src="banners_divulgacao/img_08.jpeg" alt="Categoria 8" loading="lazy">
+                <img src="banners_divulgacao/img_09.jpeg" alt="Categoria 9" loading="lazy">
+                <img src="banners_divulgacao/img_10.jpeg" alt="Categoria 10" loading="lazy">
             </div>
-
-            <div class="carousel-set">
-                <img src="banners_divulgacao/img_01.jpeg">
-                <img src="banners_divulgacao/img_02.jpeg">
-                <img src="banners_divulgacao/img_03.jpeg">
-                <img src="banners_divulgacao/img_04.jpeg">
-                <img src="banners_divulgacao/img_05.jpeg">
-                <img src="banners_divulgacao/img_06.jpeg">
-                <img src="banners_divulgacao/img_07.jpeg">
-                <img src="banners_divulgacao/img_08.jpeg">
-                <img src="banners_divulgacao/img_09.jpeg">
-                <img src="banners_divulgacao/img_10.jpeg">
-            </div>
-
+        </div>
+        
+        <div class="carousel-controls">
+            <button class="carousel-btn" data-carousel="carousel2" data-direction="prev" aria-label="Anterior">‹</button>
+            <button class="carousel-btn" data-carousel="carousel2" data-direction="next" aria-label="Próximo">›</button>
         </div>
     </div>
 
@@ -653,7 +1070,7 @@ footer{
 <!-- PARTE 4 - CATEGORIAS DE CONTEÚDO                   -->
 <!-- ================================================== -->
 
-<section class="categorias-conteudo" id="categorias">
+<section class="categorias-conteudo reveal" id="categorias">
 
     <h2>Categorias de <span>Conteúdo</span></h2>
     <p>
@@ -667,17 +1084,17 @@ footer{
              CARD: CANAIS
         ======================== -->
         <div class="card-categoria" id="card-canais">
-            <h3>Canais</h3>
+            <h3>📺 Canais</h3>
             <div class="quantidade">2.384 canais ao vivo</div>
 
             <ul>
-                <li>Abertos e Regionais</li>
-                <li>Canais Internacionais</li>
-                <li>Esportes e PPV</li>
-                <li>Filmes e Séries</li>
-                <li>Infantil e Documentários</li>
-                <li>24h (Desenhos, Séries e Premium)</li>
-                <li class="lock">Conteúdo Adulto 🔒</li>
+                <li>✓ Abertos e Regionais</li>
+                <li>✓ Canais Internacionais</li>
+                <li>✓ Esportes e PPV</li>
+                <li>✓ Filmes e Séries</li>
+                <li>✓ Infantil e Documentários</li>
+                <li>✓ 24h (Desenhos, Séries e Premium)</li>
+                <li class="lock">🔒 Conteúdo Adulto</li>
             </ul>
         </div>
 
@@ -685,17 +1102,17 @@ footer{
              CARD: SÉRIES
         ======================== -->
         <div class="card-categoria" id="card-series">
-            <h3>Séries</h3>
+            <h3>🎬 Séries</h3>
             <div class="quantidade">5.431 séries completas</div>
 
             <ul>
-                <li>Séries Nacionais e Internacionais</li>
-                <li>Novelas, Doramas e Turcas</li>
-                <li>Animes (Dublado e Legendado)</li>
-                <li>Animações e Clássicos</li>
-                <li>Plataformas Premium</li>
-                <li>Netflix, Prime, HBO, Disney+</li>
-                <li class="lock">Conteúdo Restrito 🔒</li>
+                <li>✓ Séries Nacionais e Internacionais</li>
+                <li>✓ Novelas, Doramas e Turcas</li>
+                <li>✓ Animes (Dublado e Legendado)</li>
+                <li>✓ Animações e Clássicos</li>
+                <li>✓ Plataformas Premium</li>
+                <li>✓ Netflix, Prime, HBO, Disney+</li>
+                <li class="lock">🔒 Conteúdo Restrito</li>
             </ul>
         </div>
 
@@ -703,17 +1120,17 @@ footer{
              CARD: FILMES
         ======================== -->
         <div class="card-categoria" id="card-filmes">
-            <h3>Filmes</h3>
+            <h3>🎥 Filmes</h3>
             <div class="quantidade">27.703 filmes disponíveis</div>
 
             <ul>
-                <li>Lançamentos Atualizados</li>
-                <li>Ação, Comédia e Drama</li>
-                <li>Terror, Suspense e Romance</li>
-                <li>Clássicos e Filmes 4K</li>
-                <li>Infantil e Para Família</li>
-                <li>Marvel, DC e Universos</li>
-                <li class="lock">Conteúdo Adulto 🔒</li>
+                <li>✓ Lançamentos Atualizados</li>
+                <li>✓ Ação, Comédia e Drama</li>
+                <li>✓ Terror, Suspense e Romance</li>
+                <li>✓ Clássicos e Filmes 4K</li>
+                <li>✓ Infantil e Para Família</li>
+                <li>✓ Marvel, DC e Universos</li>
+                <li class="lock">🔒 Conteúdo Adulto</li>
             </ul>
         </div>
 
@@ -724,7 +1141,7 @@ footer{
 <!-- PARTE 5 | PLANOS E VALORES -->
 <!-- ===================== -->
 
-<section class="planos" id="planos">
+<section class="planos reveal" id="planos">
 
 <h2 class="titulo">
     Planos e <span>Valores</span>
@@ -740,7 +1157,7 @@ footer{
         <!-- PLANO 1 DISPOSITIVO -->
         <div class="plano-card">
 
-            <h3>1 Dispositivo</h3>
+            <h3>📱 1 Dispositivo</h3>
 
             <div class="preco">
                 <span class="valor">R$ 19,99</span>
@@ -755,8 +1172,9 @@ footer{
             </ul>
 
             <!-- BOTÃO TESTE GRÁTIS -->
-            <a href="https://wa.me/5541997043607"
+            <a href="https://wa.me/5541997043607?text=Olá!%20Gostaria%20de%20fazer%20o%20teste%20grátis%20de%206%20horas%20no%20plano%201%20dispositivo."
                target="_blank"
+               rel="noopener noreferrer"
                class="btn-whatsapp">
 
                 <span class="icon-whatsapp"></span>
@@ -772,7 +1190,7 @@ footer{
         <!-- PLANO 2 DISPOSITIVOS -->
         <div class="plano-card">
 
-            <h3>2 Dispositivos</h3>
+            <h3>📱📱 2 Dispositivos</h3>
 
             <div class="preco">
                 <span class="valor">R$ 39,98</span>
@@ -787,8 +1205,9 @@ footer{
             </ul>
 
             <!-- BOTÃO TESTE GRÁTIS -->
-            <a href="https://wa.me/5541997043607"
+            <a href="https://wa.me/5541997043607?text=Olá!%20Gostaria%20de%20fazer%20o%20teste%20grátis%20de%206%20horas%20no%20plano%202%20dispositivos."
                target="_blank"
+               rel="noopener noreferrer"
                class="btn-whatsapp">
 
                 <span class="icon-whatsapp"></span>
@@ -809,11 +1228,11 @@ footer{
 <!-- PARTE 6 - PLATAFORMAS -->
 <!-- ================================================== -->
     
-<section class="apps-section">
+<section class="apps-section reveal">
 
     <h2 class="titulo">
     Aplicativos <span>Compatíveis</span>
-</h2
+</h2>
     
     <p class="section-subtitle">
         Aplicativos recomendados conforme cada plataforma
@@ -824,88 +1243,88 @@ footer{
         <!-- ANDROID -->
         <div class="card">
             <div class="icon-box">
-                <img src="icon/android.png" alt="Android">
+                <img src="icon/android.png" alt="Android - Celular, Tablet e TV">
             </div>
             <h3>Android</h3>
             <span class="card-subtitle">(Celular, Tablet e TV Android)</span>
 
             <ul class="app-list">
-                <li>Atmos IBO</li>
-                <li>Downloader by AFTVnews</li>
-                <li>ntDown</li>
+                <li>• Atmos IBO</li>
+                <li>• Downloader by AFTVnews</li>
+                <li>• ntDown</li>
             </ul>
         </div>
 
         <!-- IOS -->
         <div class="card">
             <div class="icon-box">
-                <img src="icon/apple.png" alt="Apple iOS">
+                <img src="icon/apple.png" alt="Apple iOS - iPhone e iPad">
             </div>
             <h3>iOS</h3>
             <span class="card-subtitle">(iPhone e iPad)</span>
 
             <ul class="app-list">
-                <li>IPTVX</li>
+                <li>• IPTVX</li>
             </ul>
         </div>
 
         <!-- COMPUTADOR -->
         <div class="card">
             <div class="icon-box">
-                <img src="icon/computer.png" alt="Computador">
+                <img src="icon/computer.png" alt="Computador - Windows, Mac e Linux">
             </div>
             <h3>Computador</h3>
             <span class="card-subtitle">(Windows, Mac e Linux)</span>
 
             <ul class="app-list">
-                <li>Web Player Oficial</li>
+                <li>• Web Player Oficial</li>
             </ul>
         </div>
 
         <!-- SMART TV -->
         <div class="card">
             <div class="icon-box">
-                <img src="icon/smart-tv.png" alt="Smart TV">
+                <img src="icon/smart-tv.png" alt="Smart TV - LG, Samsung 4K e Roku">
             </div>
             <h3>Smart TV</h3>
             <span class="card-subtitle">(LG, Samsung 4K e Roku TV)</span>
 
             <ul class="app-list">
-                <li>Play Sim</li>
-                <li>Assist Plus</li>
-                <li>Fun Play</li>
+                <li>• Play Sim</li>
+                <li>• Assist Plus</li>
+                <li>• Fun Play</li>
             </ul>
         </div>
 
         <!-- DISPOSITIVOS PARA TV -->
         <div class="card">
             <div class="icon-box">
-                <img src="icon/tv-box.png" alt="TV Box">
+                <img src="icon/tv-box.png" alt="TV Box - Mi Stick, Fire Stick, Chromecast">
             </div>
             <h3>Dispositivo para TV</h3>
             <span class="card-subtitle">(Mi Stick, Fire Stick, Chromecast e TV Box)</span>
 
             <ul class="app-list">
-                <li>Atmos IBO</li>
-                <li>Play Sim</li>
-                <li>Assist Plus</li>
-                <li>Fun Play</li>
-                <li>Downloader by AFTVnews</li>
-                <li>Web Video Cast</li>
+                <li>• Atmos IBO</li>
+                <li>• Play Sim</li>
+                <li>• Assist Plus</li>
+                <li>• Fun Play</li>
+                <li>• Downloader by AFTVnews</li>
+                <li>• Web Video Cast</li>
             </ul>
         </div>
 
         <!-- APLICATIVOS PREMIUM -->
         <div class="card premium">
             <div class="icon-box">
-                <img src="icon/premium.png" alt="Aplicativos Premium">
+                <img src="icon/premium.png" alt="Aplicativos Premium Exclusivos">
             </div>
             <h3>Aplicativos Premium</h3>
             <span class="card-subtitle">(Exclusivos para assinantes)</span>
 
             <ul class="app-list">
-                <li>Max Player</li>
-                <li>XCloud</li>
+                <li>⭐ Max Player</li>
+                <li>⭐ XCloud</li>
             </ul>
         </div>
 
@@ -917,7 +1336,7 @@ footer{
 <!-- PARTE 7 - AVALIAÇÕES DOS CLIENTES                  -->
 <!-- ================================================== -->
 
-<section id="avaliacoes">
+<section id="avaliacoes" class="reveal">
 <div class="container">
 
     <h2 class="titulo">
@@ -929,17 +1348,11 @@ footer{
         comprova na prática a qualidade do nosso serviço.
     </p>
 
-    <div style="
-        display:flex;
-        flex-direction:column;
-        gap:24px;
-        max-width:900px;
-        margin:40px auto 0;
-     ">
+    <div class="avaliacoes-grid">
 
         <div class="avaliacao">
-            <strong style="color:var(--dourado);">Carlos M.</strong><br>
-            ⭐⭐⭐⭐⭐
+            <strong>Carlos M.</strong>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
             <p>
                 Qualidade excelente nos canais e nos filmes.
                 Uso diariamente e nunca tive problemas com travamentos.
@@ -948,8 +1361,8 @@ footer{
         </div>
 
         <div class="avaliacao">
-            <strong style="color:var(--dourado);">Fernanda R.</strong><br>
-            ⭐⭐⭐⭐⭐
+            <strong>Fernanda R.</strong>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
             <p>
                 Testei outros IPTV antes, mas esse foi o único realmente estável.
                 Funciona perfeitamente na Smart TV e no celular.
@@ -957,8 +1370,8 @@ footer{
         </div>
 
         <div class="avaliacao">
-            <strong style="color:var(--dourado);">Lucas A.</strong><br>
-            ⭐⭐⭐⭐⭐
+            <strong>Lucas A.</strong>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
             <p>
                 Catálogo enorme de filmes e séries.
                 Sempre tem conteúdo novo e atualizado.
@@ -967,8 +1380,8 @@ footer{
         </div>
 
         <div class="avaliacao">
-            <strong style="color:var(--dourado);">Patrícia S.</strong><br>
-            ⭐⭐⭐⭐⭐
+            <strong>Patrícia S.</strong>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
             <p>
                 Uso em dois dispositivos ao mesmo tempo e a qualidade continua perfeita.
                 Preço justo pelo que entrega.
@@ -976,8 +1389,8 @@ footer{
         </div>
 
         <div class="avaliacao">
-            <strong style="color:var(--dourado);">Ricardo L.</strong><br>
-            ⭐⭐⭐⭐⭐
+            <strong>Ricardo L.</strong>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
             <p>
                 Organização dos canais é excelente.
                 Fácil de usar, rápido e muito estável.
@@ -986,8 +1399,8 @@ footer{
         </div>
 
         <div class="avaliacao">
-            <strong style="color:var(--dourado);">Juliana P.</strong><br>
-            ⭐⭐⭐⭐⭐
+            <strong>Juliana P.</strong>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
             <p>
                 A imagem em HD e 4K é impressionante.
                 Atendimento rápido e teste grátis ajudou muito na decisão.
@@ -995,8 +1408,8 @@ footer{
         </div>
 
         <div class="avaliacao">
-            <strong style="color:var(--dourado);">Eduardo F.</strong><br>
-            ⭐⭐⭐⭐⭐
+            <strong>Eduardo F.</strong>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
             <p>
                 Funciona muito bem em todos os aplicativos que testei.
                 Conteúdo completo e sem quedas.
@@ -1004,8 +1417,8 @@ footer{
         </div>
 
         <div class="avaliacao">
-            <strong style="color:var(--dourado);">Mariana C.</strong><br>
-            ⭐⭐⭐⭐⭐
+            <strong>Mariana C.</strong>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
             <p>
                 Serviço confiável e sempre atualizado.
                 Depois que comecei a usar, não troco mais.
@@ -1018,13 +1431,117 @@ footer{
 </section>
 
 <!-- ================================================== -->
+<!-- PARTE 8 - FAQ (PERGUNTAS FREQUENTES)               -->
+<!-- ================================================== -->
+
+<section class="faq-section reveal" id="faq">
+<div class="container">
+
+    <h2 class="titulo">
+        Perguntas <span>Frequentes</span>
+    </h2>
+
+    <p class="subtitulo-secao">
+        Tire suas dúvidas sobre o serviço MaxTV Pro
+    </p>
+
+    <div class="faq-container">
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                Como funciona o teste grátis?
+                <span class="icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    Você recebe 6 horas de acesso completo e sem compromisso para testar
+                    toda a plataforma, incluindo canais, filmes e séries. Basta clicar no
+                    botão "Teste Grátis" e entrar em contato via WhatsApp.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                Posso usar em mais de um dispositivo?
+                <span class="icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    Sim! Temos planos para 1 ou 2 dispositivos simultâneos. Você pode
+                    assistir em celular, tablet, Smart TV, computador e TV Box.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                Qual a qualidade dos vídeos?
+                <span class="icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    Oferecemos conteúdo em HD e 4K com máxima estabilidade. A qualidade
+                    se adapta automaticamente à sua conexão de internet.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                Preciso de internet rápida?
+                <span class="icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    Recomendamos conexão de pelo menos 10 Mbps para HD e 25 Mbps para 4K.
+                    Mas o sistema se adapta à velocidade disponível.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                Como faço para assinar?
+                <span class="icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    Clique no botão "Teste Grátis" de qualquer plano e entre em contato
+                    via WhatsApp. Nossa equipe te guiará por todo o processo de forma
+                    rápida e simples.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+                O serviço é confiável?
+                <span class="icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    Sim! Temos mais de 10.000 clientes ativos satisfeitos. Oferecemos
+                    suporte dedicado e garantia de estabilidade. Confira as avaliações
+                    dos nossos clientes acima.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- ================================================== -->
 <!-- BOTÃO FLUTUANTE WHATSAPP -->
 <!-- ================================================== -->
 
-<a href="https://wa.me/5541997043607"
+<a href="https://wa.me/5541997043607?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20a%20MaxTV%20Pro."
    target="_blank"
+   rel="noopener noreferrer"
    class="whatsapp-float"
-   aria-label="Teste grátis pelo WhatsApp">
+   aria-label="Contato via WhatsApp">
 </a>
     
 <!-- ================================================== -->
@@ -1032,50 +1549,329 @@ footer{
 <!-- ================================================== -->
 
 <footer>
-© 2025 • MaxTV Pro • Todos os direitos reservados
+    <p>©️ 2025 • MaxTV Pro • Todos os direitos reservados</p>
+    <p style="margin-top:10px; font-size:0.85rem;">
+        IPTV Premium com mais de 10.000 clientes satisfeitos
+    </p>
 </footer>
 
-<!-- SCRIPT DO CARROSSEL -->
+<!-- ================================================== -->
+<!-- JAVASCRIPT -->
+<!-- ================================================== -->
+
 <script>
-const carousel = document.querySelector('.carousel-wrapper');
+// ============================================
+// CARROSSEL MELHORADO COM CONTROLES
+// ============================================
 
-if (carousel) {
-    let isDown = false;
-    let startX;
-    let scrollLeft;
+class Carousel {
+    constructor(carouselId) {
+        this.wrapper = document.getElementById(carouselId);
+        if (!this.wrapper) return;
+        
+        this.track = this.wrapper.querySelector('.carousel-track');
+        this.images = Array.from(this.track.querySelectorAll('img'));
+        this.container = this.wrapper.closest('.carousel-container');
+        this.prevBtn = this.container.querySelector(`[data-carousel="${carouselId}"][data-direction="prev"]`);
+        this.nextBtn = this.container.querySelector(`[data-carousel="${carouselId}"][data-direction="next"]`);
+        
+        this.currentIndex = 0;
+        this.isDragging = false;
+        this.startPos = 0;
+        this.currentTranslate = 0;
+        this.prevTranslate = 0;
+        this.animationID = null;
+        
+        this.init();
+    }
+    
+    init() {
+        this.setupEventListeners();
+        this.updateCarousel();
+    }
+    
+    setupEventListeners() {
+        // Botões de navegação
+        if (this.prevBtn) {
+            this.prevBtn.addEventListener('click', () => this.prev());
+        }
+        if (this.nextBtn) {
+            this.nextBtn.addEventListener('click', () => this.next());
+        }
+        
+        // Mouse events
+        this.track.addEventListener('mousedown', this.touchStart.bind(this));
+        this.track.addEventListener('mouseup', this.touchEnd.bind(this));
+        this.track.addEventListener('mouseleave', this.touchEnd.bind(this));
+        this.track.addEventListener('mousemove', this.touchMove.bind(this));
+        
+        // Touch events
+        this.track.addEventListener('touchstart', this.touchStart.bind(this));
+        this.track.addEventListener('touchend', this.touchEnd.bind(this));
+        this.track.addEventListener('touchmove', this.touchMove.bind(this));
+        
+        // Prevenir arrastar imagens
+        this.images.forEach(img => {
+            img.addEventListener('dragstart', (e) => e.preventDefault());
+        });
+    }
+    
+    getItemWidth() {
+        return this.images[0].offsetWidth + 16; // 16 = gap
+    }
+    
+    getVisibleItems() {
+        const width = window.innerWidth;
+        if (width < 768) return 2;
+        if (width < 1024) return 3;
+        return 5;
+    }
+    
+    getMaxIndex() {
+        return Math.max(0, this.images.length - this.getVisibleItems());
+    }
+    
+    next() {
+        this.currentIndex = Math.min(this.currentIndex + 1, this.getMaxIndex());
+        this.updateCarousel();
+    }
+    
+    prev() {
+        this.currentIndex = Math.max(this.currentIndex - 1, 0);
+        this.updateCarousel();
+    }
+    
+    updateCarousel() {
+        const translateX = -this.currentIndex * this.getItemWidth();
+        this.track.style.transform = `translateX(${translateX}px)`;
+        
+        // Atualizar estado dos botões
+        if (this.prevBtn) {
+            this.prevBtn.style.opacity = this.currentIndex === 0 ? '0.5' : '1';
+            this.prevBtn.style.cursor = this.currentIndex === 0 ? 'default' : 'pointer';
+        }
+        if (this.nextBtn) {
+            this.nextBtn.style.opacity = this.currentIndex >= this.getMaxIndex() ? '0.5' : '1';
+            this.nextBtn.style.cursor = this.currentIndex >= this.getMaxIndex() ? 'default' : 'pointer';
+        }
+    }
+    
+    touchStart(event) {
+        this.isDragging = true;
+        this.startPos = this.getPositionX(event);
+        this.track.classList.add('dragging');
+        this.track.style.cursor = 'grabbing';
+        this.animationID = requestAnimationFrame(this.animation.bind(this));
+    }
+    
+    touchMove(event) {
+        if (this.isDragging) {
+            const currentPosition = this.getPositionX(event);
+            this.currentTranslate = this.prevTranslate + currentPosition - this.startPos;
+        }
+    }
+    
+    touchEnd() {
+        this.isDragging = false;
+        cancelAnimationFrame(this.animationID);
+        this.track.classList.remove('dragging');
+        this.track.style.cursor = 'grab';
+        
+        const movedBy = this.currentTranslate - this.prevTranslate;
+        
+        if (movedBy < -50 && this.currentIndex < this.getMaxIndex()) {
+            this.currentIndex += 1;
+        }
+        
+        if (movedBy > 50 && this.currentIndex > 0) {
+            this.currentIndex -= 1;
+        }
+        
+        this.updateCarousel();
+        this.currentTranslate = 0;
+        this.prevTranslate = 0;
+    }
+    
+    getPositionX(event) {
+        return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+    }
+    
+    animation() {
+        if (this.isDragging) {
+            requestAnimationFrame(this.animation.bind(this));
+        }
+    }
+}
 
-    carousel.addEventListener('mousedown', (e) => {
-        isDown = true;
-        startX = e.pageX - carousel.offsetLeft;
-        scrollLeft = carousel.scrollLeft;
+// Inicializar carrosséis
+document.addEventListener('DOMContentLoaded', () => {
+    new Carousel('carousel1');
+    new Carousel('carousel2');
+    
+    // Atualizar ao redimensionar
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            const carousels = [
+                new Carousel('carousel1'),
+                new Carousel('carousel2')
+            ];
+        }, 250);
     });
+});
 
-    carousel.addEventListener('mouseleave', () => {
-        isDown = false;
-    });
+// ============================================
+// FAQ ACCORDION
+// ============================================
 
-    carousel.addEventListener('mouseup', () => {
-        isDown = false;
+document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Fechar todos
+            faqItems.forEach(faqItem => {
+                faqItem.classList.remove('active');
+                faqItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            });
+            
+            // Abrir o clicado (se não estava ativo)
+            if (!isActive) {
+                item.classList.add('active');
+                question.setAttribute('aria-expanded', 'true');
+            }
+        });
     });
+});
 
-    carousel.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - carousel.offsetLeft;
-        const walk = (x - startX) * 1.5;
-        carousel.scrollLeft = scrollLeft - walk;
-    });
+// ============================================
+// CONTADOR ANIMADO
+// ============================================
 
-    carousel.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].pageX;
-        scrollLeft = carousel.scrollLeft;
-    });
+function animateCounter(element) {
+    const target = parseInt(element.getAttribute('data-target'));
+    const duration = 2000; // 2 segundos
+    const increment = target / (duration / 16); // 60 FPS
+    let current = 0;
+    
+    const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+            element.textContent = Math.floor(current).toLocaleString('pt-BR');
+            requestAnimationFrame(updateCounter);
+        } else {
+            element.textContent = target.toLocaleString('pt-BR');
+        }
+    };
+    
+    updateCounter();
+}
 
-    carousel.addEventListener('touchmove', (e) => {
-        const x = e.touches[0].pageX;
-        const walk = (x - startX) * 1.5;
-        carousel.scrollLeft = scrollLeft - walk;
+// ============================================
+// SCROLL REVEAL ANIMATION
+// ============================================
+
+function revealOnScroll() {
+    const reveals = document.querySelectorAll('.reveal');
+    
+    reveals.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add('active');
+        }
     });
+}
+
+// ============================================
+// INICIALIZAÇÃO
+// ============================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Contador animado
+    const counters = document.querySelectorAll('.stat-number');
+    const observerOptions = {
+        threshold: 0.5
+    };
+    
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                animateCounter(entry.target);
+                entry.target.classList.add('counted');
+            }
+        });
+    }, observerOptions);
+    
+    counters.forEach(counter => counterObserver.observe(counter));
+    
+    // Scroll reveal
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Executar ao carregar
+    
+    // Smooth scroll para links âncora
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && href.length > 1) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
+});
+
+// ============================================
+// LAZY LOADING DE IMAGENS
+// ============================================
+
+if ('loading' in HTMLImageElement.prototype) {
+    // Navegador suporta lazy loading nativo
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    images.forEach(img => {
+        img.src = img.src;
+    });
+} else {
+    // Fallback para navegadores antigos
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+    document.body.appendChild(script);
+}
+
+</script>
+
+<!-- Schema.org para SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MaxTV Pro",
+  "description": "O melhor streaming IPTV do Brasil com mais de 10.000 clientes ativos",
+  "url": "https://maxtvpro.com.br",
+  "logo": "icon/logo.png",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "8"
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "BRL",
+    "lowPrice": "19.99",
+    "highPrice": "39.98"
+  }
 }
 </script>
 </body>
