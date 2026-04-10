@@ -1229,16 +1229,16 @@ footer p{
     <div class="carousel-container">
         <div class="carousel-wrapper" id="carousel1">
             <div class="carousel-track">
-                <img src="banners_filmes/img_09.jpeg" alt="Filme 1" loading="lazy">
-                <img src="banners_filmes/img_04.jpeg" alt="Filme 2" loading="lazy">
-                <img src="banners_filmes/img_08.jpeg" alt="Filme 3" loading="lazy">
-                <img src="banners_filmes/img_03.jpeg" alt="Filme 4" loading="lazy">
-                <img src="banners_filmes/img_10.jpeg" alt="Filme 5" loading="lazy">
-                <img src="banners_filmes/img_01.jpeg" alt="Filme 6" loading="lazy">
-                <img src="banners_filmes/img_07.jpeg" alt="Filme 7" loading="lazy">
-                <img src="banners_filmes/img_05.jpeg" alt="Filme 8" loading="lazy">
-                <img src="banners_filmes/img_06.jpeg" alt="Filme 9" loading="lazy">
-                <img src="banners_filmes/img_02.jpeg" alt="Filme 10" loading="lazy">
+                <img src="banners_filmes/991cccfe-e5f4-43b6-a2fa-8d69a107ef48.jpeg" alt="Filme 1" loading="lazy">
+                <img src="banners_filmes/be3ea4fa-c2b1-462a-b1a1-e3b945d6681a.jpeg" alt="Filme 2" loading="lazy">
+                <img src="banners_filmes/f39edc81-9d84-4bab-af71-e4a8e4c5fb88.jpeg" alt="Filme 3" loading="lazy">
+                <img src="banners_filmes/f75bc16d-b05f-47d5-a9e0-ee52eeeab7d6.jpeg" alt="Filme 4" loading="lazy">
+                <img src="banners_filmes/1598f917-4bfd-411c-907f-cb3851429489.jpeg" alt="Filme 5" loading="lazy">
+                <img src="banners_filmes/949a1874-2be1-4997-b818-57412a158a20.jpeg" alt="Filme 6" loading="lazy">
+                <img src="banners_filmes/0266b24a-7ff4-46fe-8d3f-16408ff5bfa7.jpeg" alt="Filme 7" loading="lazy">
+                <img src="banners_filmes/f19a834a-74f5-41e1-897a-76c86d8dec0c.jpeg" alt="Filme 8" loading="lazy">
+                <img src="banners_filmes/85be88a1-738b-48e8-b2e9-51f67a923b2c.jpeg" alt="Filme 9" loading="lazy">
+                <img src="banners_filmes/89997a59-dd63-4d8e-9075-ccb05ca44e86.jpeg" alt="Filme 10" loading="lazy">
             </div>
         </div>
         
@@ -1652,23 +1652,33 @@ footer p{
         
         <p class="subtexto" style="color:#fff; margin-top:20px;">
             Indique amigos e ganhe <strong style="color:var(--verde-neon);">R$ 7,00</strong> 
-            por cada ativação realizada!
+            por cada ativação realizada! Ao se cadastrar, você receberá um <strong style="color:var(--verde-neon);">ID único</strong> 
+            e um <strong style="color:var(--verde-neon);">link de indicação</strong> personalizado.
         </p>
         
         <div class="comissao-destaque">
             <h3>R$ 7,00 por Indicação</h3>
             <p>
                 ✅ Cadastre-se gratuitamente<br>
-                ✅ Compartilhe com seus contatos<br>
+                ✅ Receba seu ID único de 6 dígitos<br>
+                ✅ Compartilhe seu link de indicação<br>
                 ✅ Receba R$ 7,00 via PIX a cada ativação<br>
                 ✅ Pagamentos rápidos e garantidos
             </p>
         </div>
         
         <div class="comissao-form">
-            <h3 style="color:var(--verde-neon); margin-bottom:24px; text-align:center;">
+            <h3 style="color:var(--verde-neon); margin-bottom:10px; text-align:center;">
                 Cadastre-se Agora
             </h3>
+            
+            <div style="background:rgba(0,255,0,0.1); border-left:3px solid var(--verde-neon); padding:15px; margin-bottom:25px; border-radius:8px;">
+                <p style="color:var(--texto); font-size:0.9rem; line-height:1.6; margin:0;">
+                    💡 <strong>Como funciona:</strong><br>
+                    Após o cadastro, você receberá um <strong>ID único de 6 dígitos</strong> e um <strong>link de indicação</strong>. 
+                    Compartilhe esse link com seus amigos. Quando alguém clicar e ativar o serviço, você ganha!
+                </p>
+            </div>
             
             <form id="formComissao" onsubmit="enviarParaWhatsApp(event)">
                 
@@ -1859,11 +1869,23 @@ footer p{
 <script>
 
 // ============================================
-// FUNÇÃO ENVIAR PARA WHATSAPP
+// FUNÇÃO GERAR ID ÚNICO DE 6 DÍGITOS
+// ============================================
+
+function gerarIDIndicacao() {
+    // Gera número aleatório de 100000 a 999999 (6 dígitos)
+    return Math.floor(100000 + Math.random() * 900000).toString();
+}
+
+// ============================================
+// FUNÇÃO ENVIAR PARA WHATSAPP COM ID
 // ============================================
 
 function enviarParaWhatsApp(event) {
     event.preventDefault();
+    
+    // Gerar ID único de 6 dígitos
+    const idIndicacao = gerarIDIndicacao();
     
     // Coletar dados do formulário
     const nome = document.getElementById('nomeCompleto').value;
@@ -1871,13 +1893,22 @@ function enviarParaWhatsApp(event) {
     const tipoChave = document.getElementById('tipoChavePix').value;
     const chavePix = document.getElementById('chavePix').value;
     
-    // Montar mensagem
+    // Criar link de indicação
+    const mensagemIndicacao = `Olá, fui indicado pelo ${idIndicacao}, quero realizar um teste grátis!`;
+    const linkIndicacao = `https://wa.me/5541997043607?text=${encodeURIComponent(mensagemIndicacao)}`;
+    
+    // Montar mensagem completa com ID e link
     const mensagem = `🎯 *CADASTRO SISTEMA DE COMISSÃO MAXTV PRO*\n\n` +
                     `👤 *Nome:* ${nome}\n` +
                     `📱 *WhatsApp:* ${whatsapp}\n` +
                     `💳 *Tipo Chave PIX:* ${tipoChave}\n` +
                     `🔑 *Chave PIX:* ${chavePix}\n\n` +
-                    `✅ Aguardando aprovação para começar a indicar e ganhar R$ 7,00 por ativação!`;
+                    `🆔 *SEU ID DE INDICAÇÃO:* ${idIndicacao}\n\n` +
+                    `🔗 *Link de Indicação:*\n${linkIndicacao}\n\n` +
+                    `📢 *Como usar:*\n` +
+                    `Compartilhe seu link de indicação com amigos!\n` +
+                    `Quando alguém clicar e ativar o serviço, você recebe R$ 7,00 via PIX!\n\n` +
+                    `✅ Aguardando aprovação para começar a indicar!`;
     
     // Codificar mensagem para URL
     const mensagemCodificada = encodeURIComponent(mensagem);
@@ -1893,7 +1924,7 @@ function enviarParaWhatsApp(event) {
     document.getElementById('formComissao').reset();
     
     // Mensagem de confirmação
-    alert('✅ Seus dados estão sendo enviados! Você será redirecionado para o WhatsApp.');
+    alert(`✅ Cadastro enviado!\n\n🆔 Seu ID: ${idIndicacao}\n\nSeu link de indicação foi enviado junto com seus dados!`);
 }
 
 // ============================================
