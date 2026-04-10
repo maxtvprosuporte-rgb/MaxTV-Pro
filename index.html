@@ -1,6 +1,6 @@
 <!-- ================================================== -->
 <!-- INÍCIO DO DOCUMENTO HTML                           -->
-<!-- PROJETO: SITE MAXTV PRO - VERSÃO MELHORADA         -->
+<!-- PROJETO: SITE MAXTV PRO - VERSÃO ATUALIZADA 2025   -->
 <!-- ================================================== -->
 
 <!DOCTYPE html>
@@ -42,15 +42,16 @@
 <style>
 
 /* ==================================================
-   VARIÁVEIS CSS
+   VARIÁVEIS CSS - NOVA PALETA VERDE
 ================================================== */
 
 :root{
     --preto:#000000;
     --preto-sec:#0b0b0b;
     --preto-card:#050505;
-    --vermelho:#b30000;
-    --vermelho-hover:#ff0000;
+    --verde:#00d900;
+    --verde-hover:#00ff00;
+    --verde-neon:#0bff0b;
     --dourado:#d4af37;
     --dourado-claro:#ffd700;
     --texto:#ffffff;
@@ -58,9 +59,9 @@
     --texto-terciario:#999999;
     --verde-whats:#25d366;
     --verde-whats-hover:#1ebe5d;
-    --border-card:rgba(255,0,0,.45);
-    --shadow-card:rgba(255,0,0,.35);
-    --shadow-card-hover:rgba(255,0,0,.18);
+    --border-card:rgba(0,255,0,.45);
+    --shadow-card:rgba(0,255,0,.35);
+    --shadow-card-hover:rgba(0,255,0,.18);
 }
 
 /* ==================================================
@@ -113,11 +114,12 @@ section{
 }
 
 .titulo span{
-    color:var(--dourado);
-    background:linear-gradient(135deg, var(--dourado), var(--dourado-claro));
+    color:var(--verde-neon);
+    background:linear-gradient(135deg, var(--verde), var(--verde-neon));
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
     background-clip:text;
+    text-shadow:0 0 30px rgba(0,255,0,0.5);
 }
 
 .subtexto{
@@ -178,6 +180,15 @@ section{
     50%{ transform:scale(1.05); }
 }
 
+@keyframes glowPulse{
+    0%, 100%{ 
+        filter:drop-shadow(0 0 25px rgba(0,217,0,0.7)) drop-shadow(0 0 15px rgba(11,255,11,0.5));
+    }
+    50%{ 
+        filter:drop-shadow(0 0 40px rgba(0,217,0,1)) drop-shadow(0 0 25px rgba(11,255,11,0.8));
+    }
+}
+
 /* ==================================================
    LOGO
 ================================================== */
@@ -185,17 +196,20 @@ section{
 .logo{
     padding:40px 16px;
     animation:fadeIn 1s ease;
+    background:transparent;
 }
 
 .logo img{
     width:190px;
     max-width:90%;
-    filter:drop-shadow(0 0 20px rgba(212,175,55,0.3));
-    transition:transform 0.3s ease;
+    filter:drop-shadow(0 0 25px rgba(0,217,0,0.7)) drop-shadow(0 0 15px rgba(11,255,11,0.5));
+    transition:transform 0.3s ease, filter 0.3s ease;
+    animation:glowPulse 3s ease-in-out infinite;
 }
 
 .logo img:hover{
     transform:scale(1.05);
+    filter:drop-shadow(0 0 35px rgba(0,217,0,0.9)) drop-shadow(0 0 20px rgba(11,255,11,0.7));
 }
 
 /* ==================================================
@@ -206,7 +220,7 @@ section{
     margin:40px auto 0;
     max-width:900px;
     background:linear-gradient(180deg, var(--preto-sec), var(--preto-card));
-    border:2px solid var(--vermelho);
+    border:2px solid var(--verde);
     border-radius:18px;
     padding:30px 22px;
     text-align:left;
@@ -214,7 +228,7 @@ section{
 }
 
 .card-info h3{
-    color:var(--dourado);
+    color:var(--verde-neon);
     margin:22px 0 10px;
 }
 
@@ -229,7 +243,7 @@ section{
 }
 
 /* ==================================================
-   CARROSSEL MELHORADO
+   CARROSSEL (mantido do original)
 ================================================== */
 
 .carousel-container{
@@ -262,7 +276,7 @@ section{
     width:140px;
     height:auto;
     border-radius:14px;
-    border:2px solid var(--vermelho);
+    border:2px solid var(--verde);
     flex-shrink:0;
     cursor:pointer;
     transition:all 0.3s ease;
@@ -271,8 +285,8 @@ section{
 
 .carousel-track img:hover{
     transform:scale(1.08) translateY(-5px);
-    border-color:var(--vermelho-hover);
-    box-shadow:0 8px 25px rgba(179,0,0,0.6);
+    border-color:var(--verde-hover);
+    box-shadow:0 8px 25px rgba(0,255,0,0.6);
     z-index:10;
 }
 
@@ -297,7 +311,7 @@ section{
 
 .carousel-btn{
     pointer-events:all;
-    background:rgba(179,0,0,0.9);
+    background:rgba(0,217,0,0.9);
     border:none;
     color:white;
     width:45px;
@@ -313,9 +327,9 @@ section{
 }
 
 .carousel-btn:hover{
-    background:var(--vermelho-hover);
+    background:var(--verde-hover);
     transform:scale(1.1);
-    box-shadow:0 6px 20px rgba(255,0,0,0.6);
+    box-shadow:0 6px 20px rgba(0,255,0,0.6);
 }
 
 .carousel-btn:active{
@@ -348,7 +362,7 @@ section{
 }
 
 .indicator.active{
-    background:var(--dourado);
+    background:var(--verde-neon);
     width:24px;
     border-radius:5px;
 }
@@ -369,7 +383,7 @@ section{
 }
 
 .categorias-conteudo h2 span{
-    color:var(--dourado);
+    color:var(--verde-neon);
 }
 
 .categorias-conteudo p{
@@ -390,7 +404,7 @@ section{
 
 .card-categoria h3{
     font-size:1.7rem;
-    color:var(--dourado);
+    color:var(--verde-neon);
     margin-bottom:12px;
 }
 
@@ -411,12 +425,12 @@ section{
 }
 
 .card-categoria ul li.lock{
-    color:#ff5a5a;
+    color:#00ff88;
     font-weight:600;
 }
 
 /* ==================================================
-   PLANOS
+   PLANOS - NOVA TABELA DE PREÇOS
 ================================================== */
 
 .planos{
@@ -434,9 +448,10 @@ section{
 }
 
 .plano-card h3{
-    color:var(--dourado);
+    color:var(--verde-neon);
     font-size:1.6rem;
     margin-bottom:14px;
+    text-shadow:0 0 20px rgba(0,255,0,0.3);
 }
 
 .preco{
@@ -466,8 +481,156 @@ section{
 }
 
 .lista-planos strong{
-    color:var(--dourado);
+    color:var(--verde-neon);
     font-weight:600;
+}
+
+/* ==================================================
+   SISTEMA DE COMISSÃO - NOVA SEÇÃO CHAMATIVA
+================================================== */
+
+.comissao-section{
+    background:linear-gradient(135deg, #001a00 0%, #003300 50%, #001a00 100%);
+    padding:80px 16px;
+    position:relative;
+    border-top:3px solid var(--verde-neon);
+    border-bottom:3px solid var(--verde-neon);
+    box-shadow:0 0 50px rgba(0,255,0,0.3) inset;
+}
+
+.comissao-section::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="1" fill="%2300ff00" opacity="0.1"/></svg>');
+    opacity:0.3;
+    pointer-events:none;
+}
+
+.comissao-container{
+    max-width:700px;
+    margin:0 auto;
+    position:relative;
+    z-index:1;
+}
+
+.comissao-badge{
+    display:inline-block;
+    background:var(--verde-neon);
+    color:var(--preto);
+    padding:10px 24px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:0.9rem;
+    margin-bottom:20px;
+    box-shadow:0 0 30px rgba(0,255,0,0.6);
+    animation:pulse 2s ease infinite;
+}
+
+.comissao-section h2{
+    font-size:clamp(2rem,5vw,3rem);
+    margin-bottom:16px;
+    color:#fff;
+}
+
+.comissao-section h2 span{
+    color:var(--verde-neon);
+    text-shadow:0 0 30px rgba(0,255,0,0.8);
+}
+
+.comissao-destaque{
+    background:rgba(0,255,0,0.1);
+    border:2px solid var(--verde-neon);
+    border-radius:16px;
+    padding:24px;
+    margin:30px 0;
+    box-shadow:0 0 30px rgba(0,255,0,0.3);
+}
+
+.comissao-destaque h3{
+    color:var(--verde-neon);
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+.comissao-destaque p{
+    color:var(--texto);
+    font-size:1.1rem;
+    line-height:1.8;
+}
+
+.comissao-form{
+    background:rgba(0,0,0,0.6);
+    border:2px solid var(--verde);
+    border-radius:20px;
+    padding:40px 30px;
+    margin-top:40px;
+    box-shadow:0 10px 50px rgba(0,255,0,0.2);
+}
+
+.form-group{
+    margin-bottom:24px;
+    text-align:left;
+}
+
+.form-group label{
+    display:block;
+    color:var(--verde-neon);
+    font-weight:600;
+    margin-bottom:8px;
+    font-size:0.95rem;
+}
+
+.form-group input,
+.form-group select{
+    width:100%;
+    padding:14px 16px;
+    border:2px solid rgba(0,255,0,0.3);
+    border-radius:10px;
+    background:rgba(0,0,0,0.4);
+    color:#fff;
+    font-size:1rem;
+    transition:all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    outline:none;
+    border-color:var(--verde-neon);
+    box-shadow:0 0 20px rgba(0,255,0,0.3);
+    background:rgba(0,0,0,0.6);
+}
+
+.form-group input::placeholder{
+    color:rgba(255,255,255,0.4);
+}
+
+.btn-submit{
+    width:100%;
+    background:linear-gradient(135deg, var(--verde), var(--verde-neon));
+    color:#000;
+    padding:18px 32px;
+    border:none;
+    border-radius:12px;
+    font-size:1.2rem;
+    font-weight:bold;
+    cursor:pointer;
+    transition:all 0.3s ease;
+    box-shadow:0 6px 30px rgba(0,255,0,0.4);
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.btn-submit:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 40px rgba(0,255,0,0.6);
+}
+
+.btn-submit:active{
+    transform:translateY(-1px);
 }
 
 /* ==================================================
@@ -586,7 +749,7 @@ section{
 }
     
 /* ==================================================
-   APLICATIVOS / PLATAFORMAS
+   APLICATIVOS / PLATAFORMAS - APENAS ÍCONES
 ================================================== */
 
 .apps-section{
@@ -601,59 +764,54 @@ section{
     color:var(--texto-sec);
 }
 
-.cards-grid{
+.apps-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:30px;
-    max-width:1200px;
+    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+    gap:40px;
+    max-width:1000px;
     margin:40px auto 0;
 }
 
+.app-icon-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    transition:transform 0.3s ease;
+}
+
+.app-icon-item:hover{
+    transform:translateY(-10px);
+}
+
 .icon-box{
-    width:80px;
-    height:80px;
+    width:100px;
+    height:100px;
     margin:0 auto 15px;
     background:#fff;
     border-radius:50%;
-    border:3px solid var(--vermelho);
+    border:3px solid var(--verde);
     display:flex;
     align-items:center;
     justify-content:center;
     transition:all 0.3s ease;
+    box-shadow:0 4px 20px rgba(0,255,0,0.3);
 }
 
-.card:hover .icon-box{
-    transform:scale(1.1) rotateY(360deg);
-    border-color:var(--dourado);
+.app-icon-item:hover .icon-box{
+    transform:scale(1.1);
+    border-color:var(--verde-neon);
+    box-shadow:0 8px 30px rgba(0,255,0,0.6);
 }
 
 .icon-box img{
-    width:40px;
+    width:50px;
     height:auto;
 }
 
-.card h3{
-    font-size:1.4rem;
-    margin-bottom:8px;
+.app-icon-item h3{
+    font-size:1rem;
+    margin-top:10px;
     color:var(--texto);
-}
-
-.card-subtitle{
-    display:block;
-    font-size:0.85rem;
-    color:var(--texto-terciario);
-    margin-bottom:15px;
-}
-
-.app-list{
-    list-style:none;
-    margin-top:12px;
-}
-
-.app-list li{
-    margin:8px 0;
-    font-size:0.9rem;
-    color:var(--texto-sec);
 }
 
 /* ==================================================
@@ -679,12 +837,12 @@ section{
 
 .avaliacao:hover{
     transform:translateY(-5px);
-    border-color:var(--vermelho-hover);
+    border-color:var(--verde-hover);
     box-shadow:0 8px 25px var(--shadow-card);
 }
 
 .avaliacao strong{
-    color:var(--dourado);
+    color:var(--verde-neon);
     font-size:1.1rem;
 }
 
@@ -724,7 +882,7 @@ section{
 }
 
 .faq-item:hover{
-    border-color:var(--vermelho);
+    border-color:var(--verde);
 }
 
 .faq-question{
@@ -744,12 +902,13 @@ section{
 }
 
 .faq-question:hover{
-    color:var(--dourado);
+    color:var(--verde-neon);
 }
 
 .faq-question .icon{
     font-size:1.5rem;
     transition:transform 0.3s ease;
+    color:var(--verde-neon);
 }
 
 .faq-item.active .faq-question .icon{
@@ -793,8 +952,9 @@ section{
 .stat-number{
     font-size:clamp(2rem, 5vw, 3rem);
     font-weight:bold;
-    color:var(--dourado);
+    color:var(--verde-neon);
     display:block;
+    text-shadow:0 0 20px rgba(0,255,0,0.5);
 }
 
 .stat-label{
@@ -813,7 +973,7 @@ footer{
     text-align:center;
     color:var(--texto-terciario);
     font-size:0.9rem;
-    border-top:1px solid rgba(255,255,255,0.1);
+    border-top:1px solid rgba(0,255,0,0.2);
 }
 
 footer p{
@@ -846,7 +1006,7 @@ footer p{
     left:0;
     width:100%;
     height:100%;
-    background:linear-gradient(135deg, rgba(212,175,55,0.05), rgba(179,0,0,0.05));
+    background:linear-gradient(135deg, rgba(0,255,0,0.05), rgba(0,217,0,0.05));
     opacity:0;
     transition:opacity 0.3s ease;
     pointer-events:none;
@@ -856,7 +1016,7 @@ footer p{
 .plano-card:hover,
 .card-categoria:hover{
     transform:translateY(-8px) scale(1.02);
-    border-color:var(--vermelho-hover);
+    border-color:var(--verde-hover);
     box-shadow:
         0 8px 30px var(--shadow-card),
         0 15px 60px var(--shadow-card-hover);
@@ -874,6 +1034,56 @@ footer p{
     .card-categoria:active{
         transform:scale(0.98);
     }
+}
+
+/* ==================================================
+   CARDS VISUAIS DE ESTATÍSTICAS
+================================================== */
+
+.visual-stat-card {
+    background: linear-gradient(135deg, rgba(0,217,0,0.1), rgba(0,255,0,0.05));
+    border: 2px solid var(--verde);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.visual-stat-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    border-color: var(--verde-neon);
+    box-shadow: 0 15px 40px rgba(0,255,0,0.4);
+    background: linear-gradient(135deg, rgba(0,217,0,0.2), rgba(0,255,0,0.1));
+}
+
+.visual-stat-card .icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.visual-stat-card:hover .icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* Tags de Categoria */
+.category-tag {
+    background: rgba(0,255,0,0.15);
+    color: var(--verde-neon);
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    border: 1px solid var(--verde);
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.category-tag:hover {
+    background: rgba(0,255,0,0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,255,0,0.3);
 }
 
 /* ==================================================
@@ -896,8 +1106,21 @@ footer p{
         max-width:500px;
     }
     
+    .apps-grid{
+        grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
+        gap:30px;
+    }
+    
     section{
         padding:50px 16px;
+    }
+    
+    .comissao-section{
+        padding:60px 16px;
+    }
+    
+    .comissao-form{
+        padding:30px 20px;
     }
 }
 
@@ -908,6 +1131,20 @@ footer p{
     
     .carousel-controls{
         padding:0 5px;
+    }
+    
+    .apps-grid{
+        grid-template-columns:repeat(3, 1fr);
+        gap:20px;
+    }
+    
+    .icon-box{
+        width:80px;
+        height:80px;
+    }
+    
+    .icon-box img{
+        width:40px;
     }
 }
 
@@ -936,12 +1173,12 @@ footer p{
     
 <section id="topo" class="logo">
 <div class="container">
-    <img src="icon/logo.PNG" alt="MaxTV Pro - Melhor IPTV do Brasil" loading="eager">
+    <img src="icon/logo.png" alt="MaxTV Pro - Melhor IPTV do Brasil" loading="eager">
 </div>
 </section>
 
 <!-- ================================================== -->
-<!-- PARTE 2 - TEXTO PRINCIPAL (SEM BOTÕES)             -->
+<!-- PARTE 2 - TEXTO PRINCIPAL                          -->
 <!-- ================================================== -->
 
 <section id="inicio">
@@ -953,7 +1190,7 @@ footer p{
 
     <p class="subtexto">
         Mais de
-        <strong style="color:var(--dourado); font-size:1.15rem;">
+        <strong style="color:var(--verde-neon); font-size:1.15rem;">
             10.000 clientes ativos
         </strong>
         já confiam na MaxTV Pro para assistir seus conteúdos favoritos
@@ -963,44 +1200,24 @@ footer p{
 
     <p class="subtexto" style="margin-top:18px;">
         Uma plataforma completa para quem busca
-        <span style="color:var(--dourado); font-weight:bold;">
+        <span style="color:var(--verde-neon); font-weight:bold;">
             performance, variedade e confiabilidade
         </span>
         em IPTV premium.
     </p>
 
-    <!-- Contador Animado -->
-    <div class="stats-container reveal">
-        <div class="stat-item">
-            <span class="stat-number" data-target="10000">0</span>
-            <span class="stat-label">Clientes Ativos</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-number" data-target="27703">0</span>
-            <span class="stat-label">Filmes Disponíveis</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-number" data-target="5431">0</span>
-            <span class="stat-label">Séries Completas</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-number" data-target="2384">0</span>
-            <span class="stat-label">Canais ao Vivo</span>
-        </div>
-    </div>
-
 </div>
 </section>
 
 <!-- ================================================== -->
-<!-- PARTE 3 - DESTAQUE DE FILMES (CARROSSEL MELHORADO) -->
+<!-- PARTE 3 - CARROSSEL 1 (FILMES - ORIGINAL)          -->
 <!-- ================================================== -->
 
-<section id="filmes" class="reveal">
+<section id="carrossel1" style="background:var(--preto);">
 <div class="container">
 
     <h2 class="titulo">
-        Os Melhores <span>Canais, Séries e Filmes em um só Aplicativo!</span>
+        Os Melhores <span>Filmes e Lançamentos</span>
     </h2>
 
     <p class="subtexto">
@@ -1008,20 +1225,20 @@ footer p{
         disponíveis com qualidade máxima.
     </p>
 
-    <!-- PRIMEIRO CARROSSEL -->
+    <!-- CARROSSEL ORIGINAL 1 -->
     <div class="carousel-container">
         <div class="carousel-wrapper" id="carousel1">
             <div class="carousel-track">
-                <img src="banners_filmes/991cccfe-e5f4-43b6-a2fa-8d69a107ef48.jpeg" alt="Filme 1" loading="lazy">
-                <img src="banners_filmes/be3ea4fa-c2b1-462a-b1a1-e3b945d6681a.jpeg" alt="Filme 2" loading="lazy">
-                <img src="banners_filmes/f39edc81-9d84-4bab-af71-e4a8e4c5fb88.jpeg" alt="Filme 3" loading="lazy">
-                <img src="banners_filmes/f75bc16d-b05f-47d5-a9e0-ee52eeeab7d6.jpeg" alt="Filme 4" loading="lazy">
-                <img src="banners_filmes/1598f917-4bfd-411c-907f-cb3851429489.jpeg" alt="Filme 5" loading="lazy">
-                <img src="banners_filmes/949a1874-2be1-4997-b818-57412a158a20.jpeg" alt="Filme 6" loading="lazy">
-                <img src="banners_filmes/0266b24a-7ff4-46fe-8d3f-16408ff5bfa7.jpeg" alt="Filme 7" loading="lazy">
-                <img src="banners_filmes/f19a834a-74f5-41e1-897a-76c86d8dec0c.jpeg" alt="Filme 8" loading="lazy">
-                <img src="banners_filmes/85be88a1-738b-48e8-b2e9-51f67a923b2c.jpeg" alt="Filme 9" loading="lazy">
-                <img src="banners_filmes/89997a59-dd63-4d8e-9075-ccb05ca44e86.jpeg" alt="Filme 10" loading="lazy">
+                <img src="banners_filmes/img_09.jpeg" alt="Filme 1" loading="lazy">
+                <img src="banners_filmes/img_04.jpeg" alt="Filme 2" loading="lazy">
+                <img src="banners_filmes/img_08.jpeg" alt="Filme 3" loading="lazy">
+                <img src="banners_filmes/img_03.jpeg" alt="Filme 4" loading="lazy">
+                <img src="banners_filmes/img_10.jpeg" alt="Filme 5" loading="lazy">
+                <img src="banners_filmes/img_01.jpeg" alt="Filme 6" loading="lazy">
+                <img src="banners_filmes/img_07.jpeg" alt="Filme 7" loading="lazy">
+                <img src="banners_filmes/img_05.jpeg" alt="Filme 8" loading="lazy">
+                <img src="banners_filmes/img_06.jpeg" alt="Filme 9" loading="lazy">
+                <img src="banners_filmes/img_02.jpeg" alt="Filme 10" loading="lazy">
             </div>
         </div>
         
@@ -1031,16 +1248,25 @@ footer p{
         </div>
     </div>
 
-    <!-- TEXTO ENTRE OS CARROSSEIS -->
+</div>
+</section>
+
+<!-- ================================================== -->
+<!-- PARTE 4 - CARROSSEL 2 (CATEGORIAS - ORIGINAL)      -->
+<!-- ================================================== -->
+
+<section id="carrossel2" style="background:var(--preto);">
+<div class="container">
+
     <p class="subtexto" style="margin:40px auto 20px;">
         Temos conteúdos para
-        <span style="color:var(--dourado); font-weight:bold;">
+        <span style="color:var(--verde-neon); font-weight:bold;">
             todos os gostos e categorias!
         </span><br>
         Futebol, Criança, Adulto, Dorama, Novela e muito mais.
     </p>
 
-    <!-- SEGUNDO CARROSSEL -->
+    <!-- CARROSSEL ORIGINAL 2 -->
     <div class="carousel-container">
         <div class="carousel-wrapper" id="carousel2">
             <div class="carousel-track">
@@ -1067,10 +1293,10 @@ footer p{
 </section>
 
 <!-- ================================================== -->
-<!-- PARTE 4 - CATEGORIAS DE CONTEÚDO                   -->
+<!-- PARTE 5 - CATEGORIAS DE CONTEÚDO (COM ANIMAÇÃO)   -->
 <!-- ================================================== -->
 
-<section class="categorias-conteudo reveal" id="categorias">
+<section class="categorias-conteudo" id="categorias">
 
     <h2>Categorias de <span>Conteúdo</span></h2>
     <p>
@@ -1085,7 +1311,9 @@ footer p{
         ======================== -->
         <div class="card-categoria" id="card-canais">
             <h3>📺 Canais</h3>
-            <div class="quantidade">2.384 canais ao vivo</div>
+            <div class="quantidade">
+                <span class="stat-number" data-target="2384">0</span> canais ao vivo
+            </div>
 
             <ul>
                 <li>✓ Abertos e Regionais</li>
@@ -1103,7 +1331,9 @@ footer p{
         ======================== -->
         <div class="card-categoria" id="card-series">
             <h3>🎬 Séries</h3>
-            <div class="quantidade">5.431 séries completas</div>
+            <div class="quantidade">
+                <span class="stat-number" data-target="5431">0</span> séries completas
+            </div>
 
             <ul>
                 <li>✓ Séries Nacionais e Internacionais</li>
@@ -1121,7 +1351,9 @@ footer p{
         ======================== -->
         <div class="card-categoria" id="card-filmes">
             <h3>🎥 Filmes</h3>
-            <div class="quantidade">27.703 filmes disponíveis</div>
+            <div class="quantidade">
+                <span class="stat-number" data-target="27703">0</span> filmes disponíveis
+            </div>
 
             <ul>
                 <li>✓ Lançamentos Atualizados</li>
@@ -1138,83 +1370,100 @@ footer p{
 </section>
 
 <!-- ===================== -->
-<!-- PARTE 5 | PLANOS E VALORES -->
+<!-- PARTE 6 | PLANOS E VALORES - DESIGN PROFISSIONAL -->
 <!-- ===================== -->
 
-<section class="planos reveal" id="planos">
+<section class="planos" id="planos">
 
 <h2 class="titulo">
-    Planos e <span>Valores</span>
+    Escolha Seu <span>Plano Ideal</span>
 </h2>
 
     <p class="subtitulo-secao">
-        Escolha o plano ideal para você e tenha acesso completo ao melhor IPTV do Brasil,
-        com qualidade máxima, estabilidade total e suporte dedicado.
+        Planos flexíveis com o melhor custo-benefício do mercado
     </p>
 
-    <div class="planos-container">
+    <div class="planos-container" style="max-width:1100px;">
 
         <!-- PLANO 1 DISPOSITIVO -->
-        <div class="plano-card">
-
-            <h3>📱 1 Dispositivo</h3>
-
-            <div class="preco">
-                <span class="valor">R$ 19,99</span>
-                <span class="periodo">/ mês</span>
+        <div class="plano-card" style="position:relative; border:2px solid var(--verde);">
+            
+            <div style="background:var(--verde); color:#000; padding:8px 16px; border-radius:20px; font-size:0.85rem; font-weight:bold; display:inline-block; margin-bottom:20px;">
+                MAIS POPULAR
             </div>
 
-            <ul class="lista-planos">
-                <li>3 meses — R$ 59,97</li>
-                <li>6 meses — R$ 107,94 <strong>(10% OFF)</strong></li>
-                <li>9 meses — R$ 156,52 <strong>(13% OFF)</strong></li>
-                <li>12 meses — R$ 191,37 <strong>(20% OFF)</strong></li>
-            </ul>
+            <h3 style="margin-bottom:25px; color:var(--verde-neon);">📱 Plano Individual</h3>
+            
+            <div style="background:rgba(0,217,0,0.1); border:2px solid var(--verde); border-radius:15px; padding:20px; margin-bottom:25px;">
+                <div class="preco" style="margin-bottom:5px;">
+                    <span class="valor" style="font-size:2.5rem; color:var(--verde-neon);">R$ 29,99</span>
+                    <span class="periodo" style="font-size:1rem; color:var(--texto-sec);">/mês</span>
+                </div>
+                <p style="color:var(--texto-sec); font-size:0.9rem;">1 Dispositivo Simultâneo</p>
+            </div>
 
-            <!-- BOTÃO TESTE GRÁTIS -->
-            <a href="https://wa.me/5541997043607?text=Olá!%20Gostaria%20de%20fazer%20o%20teste%20grátis%20de%206%20horas%20no%20plano%201%20dispositivo."
+            <div style="text-align:left; margin-bottom:25px;">
+                <p style="color:var(--verde-neon); font-weight:600; margin-bottom:15px; font-size:1.05rem;">✓ Planos Disponíveis:</p>
+                <ul class="lista-planos" style="background:rgba(0,0,0,0.3); padding:20px; border-radius:12px; border-left:3px solid var(--verde);">
+                    <li style="padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.1);">30 dias — <strong style="color:var(--verde-neon);">R$ 29,99</strong></li>
+                    <li style="padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.1);">90 dias — <strong style="color:var(--verde-neon);">R$ 84,99</strong> <span style="background:var(--verde); color:#000; padding:3px 8px; border-radius:10px; font-size:0.75rem; margin-left:5px;">ECONOMIZE 5%</span></li>
+                    <li style="padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.1);">180 dias — <strong style="color:var(--verde-neon);">R$ 159,99</strong> <span style="background:var(--verde); color:#000; padding:3px 8px; border-radius:10px; font-size:0.75rem; margin-left:5px;">ECONOMIZE 11%</span></li>
+                    <li style="padding:8px 0;">360 dias — <strong style="color:var(--verde-neon);">R$ 299,99</strong> <span style="background:var(--verde); color:#000; padding:3px 8px; border-radius:10px; font-size:0.75rem; margin-left:5px;">ECONOMIZE 17%</span></li>
+                </ul>
+            </div>
+
+            <a href="https://wa.me/5541997043607?text=Olá!%20Gostaria%20de%20fazer%20o%20teste%20grátis%20de%204%20horas%20no%20plano%201%20dispositivo."
                target="_blank"
                rel="noopener noreferrer"
-               class="btn-whatsapp">
+               class="btn-whatsapp" style="width:100%; justify-content:center;">
 
                 <span class="icon-whatsapp"></span>
 
                 <span class="texto">
-                    TESTE GRÁTIS
-                    <small>6 horas sem compromisso</small>
+                    TESTE GRÁTIS 4H
+                    <small>Sem compromisso</small>
                 </span>
             </a>
 
         </div>
 
         <!-- PLANO 2 DISPOSITIVOS -->
-        <div class="plano-card">
-
-            <h3>📱📱 2 Dispositivos</h3>
-
-            <div class="preco">
-                <span class="valor">R$ 39,98</span>
-                <span class="periodo">/ mês</span>
+        <div class="plano-card" style="position:relative; border:2px solid var(--verde);">
+            
+            <div style="background:var(--verde); color:#000; padding:8px 16px; border-radius:20px; font-size:0.85rem; font-weight:bold; display:inline-block; margin-bottom:20px;">
+                ⭐ MELHOR VALOR
             </div>
 
-            <ul class="lista-planos">
-                <li>3 meses — R$ 119,94</li>
-                <li>6 meses — R$ 225,58 <strong>(6% OFF)</strong></li>
-                <li>9 meses — R$ 313,64 <strong>(12% OFF)</strong></li>
-                <li>12 meses — R$ 383,80 <strong>(20% OFF)</strong></li>
-            </ul>
+            <h3 style="margin-bottom:25px; color:var(--verde-neon);">📱📱 Plano Família</h3>
+            
+            <div style="background:rgba(0,217,0,0.1); border:2px solid var(--verde); border-radius:15px; padding:20px; margin-bottom:25px;">
+                <div class="preco" style="margin-bottom:5px;">
+                    <span class="valor" style="font-size:2.5rem; color:var(--verde-neon);">R$ 49,99</span>
+                    <span class="periodo" style="font-size:1rem; color:var(--texto-sec);">/mês</span>
+                </div>
+                <p style="color:var(--texto-sec); font-size:0.9rem;">2 Dispositivos Simultâneos</p>
+            </div>
 
-            <!-- BOTÃO TESTE GRÁTIS -->
-            <a href="https://wa.me/5541997043607?text=Olá!%20Gostaria%20de%20fazer%20o%20teste%20grátis%20de%206%20horas%20no%20plano%202%20dispositivos."
+            <div style="text-align:left; margin-bottom:25px;">
+                <p style="color:var(--verde-neon); font-weight:600; margin-bottom:15px; font-size:1.05rem;">✓ Planos Disponíveis:</p>
+                <ul class="lista-planos" style="background:rgba(0,0,0,0.3); padding:20px; border-radius:12px; border-left:3px solid var(--verde);">
+                    <li style="padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.1);">30 dias — <strong style="color:var(--verde-neon);">R$ 49,99</strong></li>
+                    <li style="padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.1);">90 dias — <strong style="color:var(--verde-neon);">R$ 139,99</strong> <span style="background:var(--verde); color:#000; padding:3px 8px; border-radius:10px; font-size:0.75rem; margin-left:5px;">ECONOMIZE 7%</span></li>
+                    <li style="padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.1);">180 dias — <strong style="color:var(--verde-neon);">R$ 269,99</strong> <span style="background:var(--verde); color:#000; padding:3px 8px; border-radius:10px; font-size:0.75rem; margin-left:5px;">ECONOMIZE 10%</span></li>
+                    <li style="padding:8px 0;">360 dias — <strong style="color:var(--verde-neon);">R$ 499,99</strong> <span style="background:var(--verde); color:#000; padding:3px 8px; border-radius:10px; font-size:0.75rem; margin-left:5px;">ECONOMIZE 17%</span></li>
+                </ul>
+            </div>
+
+            <a href="https://wa.me/5541997043607?text=Olá!%20Gostaria%20de%20fazer%20o%20teste%20grátis%20de%204%20horas%20no%20plano%202%20dispositivos."
                target="_blank"
                rel="noopener noreferrer"
-               class="btn-whatsapp">
+               class="btn-whatsapp" style="width:100%; justify-content:center;">
 
                 <span class="icon-whatsapp"></span>
 
                 <span class="texto">
-                    TESTE GRÁTIS
-                    <small>6 horas sem compromisso</small>
+                    TESTE GRÁTIS 4H
+                    <small>Sem compromisso</small>
                 </span>
             </a>
 
@@ -1225,107 +1474,67 @@ footer p{
 </section>
 
 <!-- ================================================== -->
-<!-- PARTE 6 - PLATAFORMAS -->
+<!-- PARTE 7 - APLICATIVOS COMPATÍVEIS                 -->
 <!-- ================================================== -->
     
-<section class="apps-section reveal">
+<section class="apps-section" id="aplicativos">
 
     <h2 class="titulo">
     Aplicativos <span>Compatíveis</span>
 </h2>
     
     <p class="section-subtitle">
-        Aplicativos recomendados conforme cada plataforma
+        Disponível nas principais plataformas
     </p>
 
-    <div class="cards-grid">
+    <div class="apps-grid">
 
         <!-- ANDROID -->
-        <div class="card">
+        <div class="app-icon-item">
             <div class="icon-box">
-                <img src="icon/android.png" alt="Android - Celular, Tablet e TV">
+                <img src="icon/android.png" alt="Android">
             </div>
             <h3>Android</h3>
-            <span class="card-subtitle">(Celular, Tablet e TV Android)</span>
-
-            <ul class="app-list">
-                <li>• Atmos IBO</li>
-                <li>• Downloader by AFTVnews</li>
-                <li>• ntDown</li>
-            </ul>
         </div>
 
         <!-- IOS -->
-        <div class="card">
+        <div class="app-icon-item">
             <div class="icon-box">
-                <img src="icon/apple.png" alt="Apple iOS - iPhone e iPad">
+                <img src="icon/apple.png" alt="iOS">
             </div>
             <h3>iOS</h3>
-            <span class="card-subtitle">(iPhone e iPad)</span>
-
-            <ul class="app-list">
-                <li>• IPTVX</li>
-            </ul>
         </div>
 
         <!-- COMPUTADOR -->
-        <div class="card">
+        <div class="app-icon-item">
             <div class="icon-box">
-                <img src="icon/computer.png" alt="Computador - Windows, Mac e Linux">
+                <img src="icon/computer.png" alt="Computador">
             </div>
             <h3>Computador</h3>
-            <span class="card-subtitle">(Windows, Mac e Linux)</span>
-
-            <ul class="app-list">
-                <li>• Web Player Oficial</li>
-            </ul>
         </div>
 
         <!-- SMART TV -->
-        <div class="card">
+        <div class="app-icon-item">
             <div class="icon-box">
-                <img src="icon/smart-tv.png" alt="Smart TV - LG, Samsung 4K e Roku">
+                <img src="icon/smart-tv.png" alt="Smart TV">
             </div>
             <h3>Smart TV</h3>
-            <span class="card-subtitle">(LG, Samsung 4K e Roku TV)</span>
-
-            <ul class="app-list">
-                <li>• Play Sim</li>
-                <li>• Assist Plus</li>
-                <li>• Fun Play</li>
-            </ul>
         </div>
 
-        <!-- DISPOSITIVOS PARA TV -->
-        <div class="card">
+        <!-- TV BOX -->
+        <div class="app-icon-item">
             <div class="icon-box">
-                <img src="icon/tv-box.png" alt="TV Box - Mi Stick, Fire Stick, Chromecast">
+                <img src="icon/tv-box.png" alt="TV Box">
             </div>
-            <h3>Dispositivo para TV</h3>
-            <span class="card-subtitle">(Mi Stick, Fire Stick, Chromecast e TV Box)</span>
-
-            <ul class="app-list">
-                <li>• Atmos IBO</li>
-                <li>• Play Sim</li>
-                <li>• Assist Plus</li>
-                <li>• Fun Play</li>
-                <li>• Downloader by AFTVnews</li>
-                <li>• Web Video Cast</li>
-            </ul>
+            <h3>TV Box</h3>
         </div>
 
-        <!-- APLICATIVOS PREMIUM -->
-        <div class="card premium">
+        <!-- FIRESTICK -->
+        <div class="app-icon-item">
             <div class="icon-box">
-                <img src="icon/premium.png" alt="Aplicativos Premium Exclusivos">
+                <img src="icon/premium.png" alt="Fire Stick">
             </div>
-            <h3>Aplicativos Premium</h3>
-            <span class="card-subtitle">(Exclusivos para assinantes)</span>
-
-            <ul class="app-list">
-                <li>⭐ Max Player</li>
-                <li>⭐ XCloud</li>
-            </ul>
+            <h3>Fire Stick</h3>
         </div>
 
     </div>
@@ -1333,10 +1542,10 @@ footer p{
 </section>
     
 <!-- ================================================== -->
-<!-- PARTE 7 - AVALIAÇÕES DOS CLIENTES                  -->
+<!-- PARTE 8 - AVALIAÇÕES DOS CLIENTES                  -->
 <!-- ================================================== -->
 
-<section id="avaliacoes" class="reveal">
+<section id="avaliacoes">
 <div class="container">
 
     <h2 class="titulo">
@@ -1431,10 +1640,98 @@ footer p{
 </section>
 
 <!-- ================================================== -->
-<!-- PARTE 8 - FAQ (PERGUNTAS FREQUENTES)               -->
+<!-- PARTE 9 - SISTEMA DE COMISSÃO                      -->
 <!-- ================================================== -->
 
-<section class="faq-section reveal" id="faq">
+<section class="comissao-section" id="comissao">
+    <div class="comissao-container">
+        
+        <div class="comissao-badge">💰 GANHE DINHEIRO INDICANDO</div>
+        
+        <h2>Sistema de <span>Comissão MaxTV Pro</span></h2>
+        
+        <p class="subtexto" style="color:#fff; margin-top:20px;">
+            Indique amigos e ganhe <strong style="color:var(--verde-neon);">R$ 7,00</strong> 
+            por cada ativação realizada!
+        </p>
+        
+        <div class="comissao-destaque">
+            <h3>R$ 7,00 por Indicação</h3>
+            <p>
+                ✅ Cadastre-se gratuitamente<br>
+                ✅ Compartilhe com seus contatos<br>
+                ✅ Receba R$ 7,00 via PIX a cada ativação<br>
+                ✅ Pagamentos rápidos e garantidos
+            </p>
+        </div>
+        
+        <div class="comissao-form">
+            <h3 style="color:var(--verde-neon); margin-bottom:24px; text-align:center;">
+                Cadastre-se Agora
+            </h3>
+            
+            <form id="formComissao" onsubmit="enviarParaWhatsApp(event)">
+                
+                <div class="form-group">
+                    <label for="nomeCompleto">Nome Completo *</label>
+                    <input 
+                        type="text" 
+                        id="nomeCompleto" 
+                        name="nomeCompleto" 
+                        placeholder="Digite seu nome completo"
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="whatsapp">WhatsApp (com DDD) *</label>
+                    <input 
+                        type="tel" 
+                        id="whatsapp" 
+                        name="whatsapp" 
+                        placeholder="(41) 99999-9999"
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="tipoChavePix">Tipo de Chave PIX *</label>
+                    <select id="tipoChavePix" name="tipoChavePix" required>
+                        <option value="">Selecione o tipo de chave</option>
+                        <option value="CPF">CPF</option>
+                        <option value="CNPJ">CNPJ</option>
+                        <option value="Email">E-mail</option>
+                        <option value="Telefone">Telefone</option>
+                        <option value="Aleatoria">Chave Aleatória</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="chavePix">Chave PIX *</label>
+                    <input 
+                        type="text" 
+                        id="chavePix" 
+                        name="chavePix" 
+                        placeholder="Digite sua chave PIX"
+                        required
+                    >
+                </div>
+                
+                <button type="submit" class="btn-submit">
+                    📤 Enviar Cadastro
+                </button>
+                
+            </form>
+        </div>
+        
+    </div>
+</section>
+
+<!-- ================================================== -->
+<!-- PARTE 10 - FAQ (PERGUNTAS FREQUENTES)              -->
+<!-- ================================================== -->
+
+<section class="faq-section" id="faq">
 <div class="container">
 
     <h2 class="titulo">
@@ -1448,13 +1745,13 @@ footer p{
     <div class="faq-container">
 
         <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
                 Como funciona o teste grátis?
                 <span class="icon">+</span>
             </button>
             <div class="faq-answer">
                 <p>
-                    Você recebe 6 horas de acesso completo e sem compromisso para testar
+                    Você recebe 4 horas de acesso completo e sem compromisso para testar
                     toda a plataforma, incluindo canais, filmes e séries. Basta clicar no
                     botão "Teste Grátis" e entrar em contato via WhatsApp.
                 </p>
@@ -1462,7 +1759,7 @@ footer p{
         </div>
 
         <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
                 Posso usar em mais de um dispositivo?
                 <span class="icon">+</span>
             </button>
@@ -1475,7 +1772,7 @@ footer p{
         </div>
 
         <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
                 Qual a qualidade dos vídeos?
                 <span class="icon">+</span>
             </button>
@@ -1488,7 +1785,21 @@ footer p{
         </div>
 
         <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                Como funciona o sistema de comissão?
+                <span class="icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    Cadastre-se gratuitamente, compartilhe com seus amigos e ganhe R$ 7,00
+                    via PIX para cada pessoa que ativar o serviço através da sua indicação.
+                    É simples, rápido e os pagamentos são garantidos!
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
                 Preciso de internet rápida?
                 <span class="icon">+</span>
             </button>
@@ -1501,7 +1812,7 @@ footer p{
         </div>
 
         <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
                 Como faço para assinar?
                 <span class="icon">+</span>
             </button>
@@ -1510,20 +1821,6 @@ footer p{
                     Clique no botão "Teste Grátis" de qualquer plano e entre em contato
                     via WhatsApp. Nossa equipe te guiará por todo o processo de forma
                     rápida e simples.
-                </p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-                O serviço é confiável?
-                <span class="icon">+</span>
-            </button>
-            <div class="faq-answer">
-                <p>
-                    Sim! Temos mais de 10.000 clientes ativos satisfeitos. Oferecemos
-                    suporte dedicado e garantia de estabilidade. Confira as avaliações
-                    dos nossos clientes acima.
                 </p>
             </div>
         </div>
@@ -1560,8 +1857,48 @@ footer p{
 <!-- ================================================== -->
 
 <script>
+
 // ============================================
-// CARROSSEL MELHORADO COM CONTROLES
+// FUNÇÃO ENVIAR PARA WHATSAPP
+// ============================================
+
+function enviarParaWhatsApp(event) {
+    event.preventDefault();
+    
+    // Coletar dados do formulário
+    const nome = document.getElementById('nomeCompleto').value;
+    const whatsapp = document.getElementById('whatsapp').value;
+    const tipoChave = document.getElementById('tipoChavePix').value;
+    const chavePix = document.getElementById('chavePix').value;
+    
+    // Montar mensagem
+    const mensagem = `🎯 *CADASTRO SISTEMA DE COMISSÃO MAXTV PRO*\n\n` +
+                    `👤 *Nome:* ${nome}\n` +
+                    `📱 *WhatsApp:* ${whatsapp}\n` +
+                    `💳 *Tipo Chave PIX:* ${tipoChave}\n` +
+                    `🔑 *Chave PIX:* ${chavePix}\n\n` +
+                    `✅ Aguardando aprovação para começar a indicar e ganhar R$ 7,00 por ativação!`;
+    
+    // Codificar mensagem para URL
+    const mensagemCodificada = encodeURIComponent(mensagem);
+    
+    // Número do WhatsApp de destino
+    const numeroWhatsApp = '5541997043607';
+    
+    // Abrir WhatsApp
+    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
+    window.open(urlWhatsApp, '_blank');
+    
+    // Limpar formulário
+    document.getElementById('formComissao').reset();
+    
+    // Mensagem de confirmação
+    alert('✅ Seus dados estão sendo enviados! Você será redirecionado para o WhatsApp.');
+}
+
+// ============================================
+// ============================================
+// CARROSSEL ORIGINAL (RESTAURADO)
 // ============================================
 
 class Carousel {
@@ -1591,7 +1928,6 @@ class Carousel {
     }
     
     setupEventListeners() {
-        // Botões de navegação
         if (this.prevBtn) {
             this.prevBtn.addEventListener('click', () => this.prev());
         }
@@ -1599,25 +1935,22 @@ class Carousel {
             this.nextBtn.addEventListener('click', () => this.next());
         }
         
-        // Mouse events
         this.track.addEventListener('mousedown', this.touchStart.bind(this));
         this.track.addEventListener('mouseup', this.touchEnd.bind(this));
         this.track.addEventListener('mouseleave', this.touchEnd.bind(this));
         this.track.addEventListener('mousemove', this.touchMove.bind(this));
         
-        // Touch events
         this.track.addEventListener('touchstart', this.touchStart.bind(this));
         this.track.addEventListener('touchend', this.touchEnd.bind(this));
         this.track.addEventListener('touchmove', this.touchMove.bind(this));
         
-        // Prevenir arrastar imagens
         this.images.forEach(img => {
             img.addEventListener('dragstart', (e) => e.preventDefault());
         });
     }
     
     getItemWidth() {
-        return this.images[0].offsetWidth + 16; // 16 = gap
+        return this.images[0].offsetWidth + 16;
     }
     
     getVisibleItems() {
@@ -1645,7 +1978,6 @@ class Carousel {
         const translateX = -this.currentIndex * this.getItemWidth();
         this.track.style.transform = `translateX(${translateX}px)`;
         
-        // Atualizar estado dos botões
         if (this.prevBtn) {
             this.prevBtn.style.opacity = this.currentIndex === 0 ? '0.5' : '1';
             this.prevBtn.style.cursor = this.currentIndex === 0 ? 'default' : 'pointer';
@@ -1703,51 +2035,32 @@ class Carousel {
     }
 }
 
-// Inicializar carrosséis
-document.addEventListener('DOMContentLoaded', () => {
-    new Carousel('carousel1');
-    new Carousel('carousel2');
-    
-    // Atualizar ao redimensionar
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-            const carousels = [
-                new Carousel('carousel1'),
-                new Carousel('carousel2')
-            ];
-        }, 250);
-    });
-});
-
 // ============================================
-// FAQ ACCORDION
+// FAQ ACCORDION - VERSÃO SIMPLES E FUNCIONAL
 // ============================================
 
-document.addEventListener('DOMContentLoaded', () => {
-    const faqItems = document.querySelectorAll('.faq-item');
+function toggleFAQ(button) {
+    const item = button.parentElement;
+    const wasActive = item.classList.contains('active');
     
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        
-        question.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
-            
-            // Fechar todos
-            faqItems.forEach(faqItem => {
-                faqItem.classList.remove('active');
-                faqItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-            });
-            
-            // Abrir o clicado (se não estava ativo)
-            if (!isActive) {
-                item.classList.add('active');
-                question.setAttribute('aria-expanded', 'true');
-            }
-        });
+    // Fechar todos os itens
+    document.querySelectorAll('.faq-item').forEach(faqItem => {
+        faqItem.classList.remove('active');
+        const btn = faqItem.querySelector('.faq-question');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
     });
-});
+    
+    // Abrir o item clicado se não estava ativo
+    if (!wasActive) {
+        item.classList.add('active');
+        button.setAttribute('aria-expanded', 'true');
+    }
+}
+
+function initFAQ() {
+    // FAQ já está funcionando com onclick inline
+    console.log('FAQ inicializado');
+}
 
 // ============================================
 // CONTADOR ANIMADO
@@ -1790,14 +2103,43 @@ function revealOnScroll() {
 }
 
 // ============================================
-// INICIALIZAÇÃO
+// MÁSCARA TELEFONE
+// ============================================
+
+function initPhoneMask() {
+    const whatsappInput = document.getElementById('whatsapp');
+    if (whatsappInput) {
+        whatsappInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length <= 11) {
+                value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+                value = value.replace(/(\d)(\d{4})$/, '$1-$2');
+            }
+            e.target.value = value;
+        });
+    }
+}
+
+// ============================================
+// INICIALIZAÇÃO COMPLETA
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Contador animado
+    
+    // Inicializar carrosseis
+    new Carousel('carousel1');
+    new Carousel('carousel2');
+    
+    // Inicializar FAQ
+    initFAQ();
+    
+    // Inicializar máscara de telefone
+    initPhoneMask();
+    
+    // Contador animado nos boxes
     const counters = document.querySelectorAll('.stat-number');
     const observerOptions = {
-        threshold: 0.5
+        threshold: 0.3
     };
     
     const counterObserver = new IntersectionObserver((entries) => {
@@ -1813,7 +2155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Scroll reveal
     window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // Executar ao carregar
+    revealOnScroll();
     
     // Smooth scroll para links âncora
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1832,23 +2174,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
-// ============================================
-// LAZY LOADING DE IMAGENS
-// ============================================
-
-if ('loading' in HTMLImageElement.prototype) {
-    // Navegador suporta lazy loading nativo
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach(img => {
-        img.src = img.src;
-    });
-} else {
-    // Fallback para navegadores antigos
-    const script = document.createElement('script');
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-    document.body.appendChild(script);
-}
 
 </script>
 
@@ -1869,10 +2194,10 @@ if ('loading' in HTMLImageElement.prototype) {
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "BRL",
-    "lowPrice": "19.99",
-    "highPrice": "39.98"
+    "lowPrice": "29.99",
+    "highPrice": "49.99"
   }
 }
 </script>
 </body>
-</html>
+</html><
